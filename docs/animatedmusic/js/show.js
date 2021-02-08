@@ -1,6 +1,3 @@
-var userLang = sessionStorage["userLang"]?sessionStorage["userLang"]:(navigator.language || navigator.userLanguage).split("-")[0];
-var langIndex;
-
 function show_flash() {
 	document.title=name.charAt(0).toUpperCase() + name.slice(1) + " - Flash";
 	
