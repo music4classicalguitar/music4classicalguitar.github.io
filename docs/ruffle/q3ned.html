@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+    <script type="text/javascript" src="js/ruffle.js"></script>
+    <title>q3ned</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", () => {
+        let ruffle = window.RufflePlayer.newest();
+        let player = ruffle.createPlayer();
+        let container = document.getElementsByTagName("body")[0];
+        container.appendChild(player);
+        player.config = { autoplay: "on" };
+        player.load("q3ned.swf");
+    });
+    </script>
+  </body>
+</html>
