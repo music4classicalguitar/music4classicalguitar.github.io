@@ -198,6 +198,8 @@ function drawcircle(ctx, x, y, r, color) {
 	ctx.arc(x, y, r, 0, 2 * Math.PI, false);
 	ctx.fillStyle = color;
 	ctx.fill();
+	ctx.fillStyle = "#000000";
+	ctx.stroke();
 }
 
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
@@ -213,7 +215,7 @@ function addCanvas() {
 	canvas.id= "Chords";
 	canvas.width  = vw;
 	canvas.height = 2*borderwidth+5*h;
-	vl = canvas.width-3*borderwidth, l = vl / (1 - Math.pow(p,-15))
+	vl = canvas.width-2*offset-borderwidth, l = vl / (1 - Math.pow(p,-frets-1));
 	document.getElementsByTagName("body")[0].appendChild(canvas);
 	ctx = canvas.getContext("2d");
 }
@@ -222,29 +224,30 @@ function drawneck() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	console.log(vw+" "+vh+"  vl "+vl+" l "+l+" p "+p);
 	for (var i=0;i<strings;i++) {
-		drawline(ctx, offset, offset+i*h, offset+vl, offset+i*h);
+		drawline(ctx, 2*offset, offset+i*h, offset+vl, offset+i*h);
 	}
-	for (var i=0;i<frets;i++) {
-		var x = offset+l*(1-Math.pow(p,-i));
+	for (var i=0;i<=frets;i++) {
+		var x = 2*offset+l*(1-Math.pow(p,-i));
 		drawline(ctx, x, offset, x, offset+(strings-1)*h);
 	}
 	ctx.fillStyle = "#000000";
+	ctx.font = "16px Arial";
 	var x, y;
-	x = offset+l*(1-Math.pow(p,+.2));
+	x = 1.5*offset+l*(1-Math.pow(p,+.2));
 	for (var n=0;n<strings; n++) {
 		ctx.fillText(stringnotes[strings-n-1], x, offset+n*h);
 	}
-	x = offset+l*(1-Math.pow(p,-3+.5));
+	x = 2*offset+l*(1-Math.pow(p,-3+.5));
 	ctx.fillText("III", x,  offset+strings*h);
-	x = offset+l*(1-Math.pow(p,-5+.5));
+	x = 2*offset+l*(1-Math.pow(p,-5+.5));
 	ctx.fillText("V", x,  offset+strings*h);
-	x = offset+l*(1-Math.pow(p,-7+.5));
+	x = 2*offset+l*(1-Math.pow(p,-7+.5));
 	ctx.fillText("VII", x,  offset+strings*h);
-	x = offset+l*(1-Math.pow(p,-10+.5));
+	x = 2*offset+l*(1-Math.pow(p,-10+.5));
 	ctx.fillText("X", x,  offset+strings*h);
-	x = offset+l*(1-Math.pow(p,-12+.5));
+	x = 2*offset+l*(1-Math.pow(p,-12+.5));
 	ctx.fillText("XII", x,  offset+strings*h);
-	x = offset+l*(1-Math.pow(p,-15+.5));
+	x = 2*offset+l*(1-Math.pow(p,-15+.5));
 	ctx.fillText("XV", x,  offset+strings*h);
 }
 
@@ -259,8 +262,8 @@ function accidentals(s) {
 }
 
 function setStringNote(str, pos, color) {
-	var r = 5;
-	var x = offset+l*(1-Math.pow(p,-pos))-2*r;
+	var r = 7;
+	var x = 2*offset+l*(1-Math.pow(p,-pos))-2*r;
 	drawcircle(ctx, x, offset+(strings-str-1)*h, r, color);
 }
 
