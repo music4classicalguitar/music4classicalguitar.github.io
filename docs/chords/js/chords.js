@@ -1,8 +1,12 @@
 const instruments = [
-	[ "guitar", ["E2", "A2", "D3", "G3", "B3", "E4"]],
-	[ "tenor banjo", ["C3", "G3", "D4", "A4"]],
-	[ "plectrum banjo", ["C3", "G3", "B3", "D4"]],
-	[ "violin", ["G3", "D4", "A4", "E5"]]
+	[ "Guitar", ["E2", "A2", "D3", "G3", "B3", "E4"]],
+	[ "Bass guitar", ["E1", "A1", "D2", "G2"]],
+	[ "Tenor banjo", ["C3", "G3", "D4", "A4"]],
+	[ "Plectrum banjo", ["C3", "G3", "B3", "D4"]],
+	[ "Violin", ["G3", "D4", "A4", "E5"]],
+	[ "Viola", ["C3", "G3", "D4", "A4"]],
+	[ "Cello", ["C2", "G2", "D3", "A3"]],
+	[ "Double bass", ["E1", "A1", "D2", "G2"]]
 ];
 
 var stringnotenumbers = [];
@@ -20,7 +24,11 @@ function addSelectInstrument() {
 	for (var i=0; i<instruments.length; i++) {
 		var option = document.createElement("option");
 		option.value = instruments[i][0];
-		option.innerHTML = instruments[i][0];
+		var s = ":";
+		for (var n=0; n<instruments[i][1].length; n++) {
+			s += " "+instruments[i][1][n];
+		}
+		option.innerHTML = instruments[i][0]+s;
 		sel.appendChild(option);
 	}
 	body.appendChild(sel);
@@ -164,7 +172,6 @@ function setChordType(i) {
 		s += scale[n]+" ";
 	}
 	s=accidentals(s);
-	chordinfo.innerHTML = "chord "+scale[baseNote]+" "+chordtypes[chordType][0]+": "+s ;
 }
 
 function selectChordType(_this) {
@@ -266,7 +273,7 @@ function selectChord(b,c) {
 		notes[j] = (noteOffsets[b]+chordnoteoffsets[c][j])%12;
 		s += "<span style=\"background-color: "+colors[chordnoteoffsets[c][j]%12]+";\">"+scale[n]+"</span> ";
 	}
-	chordinfo.innerHTML = "chord "+scale[(sl+b-noteOffset+chordnotenumbers[c][0])%sl]+chordtypes[c][2]+" ("+chordtypes[c][0]+"): "+s;
+	chordinfo.innerHTML = "Chord: "+scale[(sl+b-noteOffset+chordnotenumbers[c][0])%sl]+chordtypes[c][2]+" ("+chordtypes[c][0]+"): "+s;
 	for (var i=0; i<notes.length; i++) {
 		for (n=0;n<strings;n++) {
 			var p = (12+notes[i]-stringnotenumbers[n])%12;				
@@ -326,8 +333,8 @@ function addChordInfo() {
 function init() {
 	setChordNoteNumbers();
 	addSelectTable();
-	addCanvas();
 	addChordInfo();
+	addCanvas();
 	setInstrument(0);
 	setBaseNote(0);
 	setChordType(0);
