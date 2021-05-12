@@ -66,7 +66,7 @@ const noteOffset = 6 ;
 const order = [ 6, 13, 1, 8, 15, 3, 10, 5, 12, 0, 7, 14, 2, 9, 16, 4, 11 ];
 const noteOffsets = [ 6, 1, 8, 3, 10, 5, 0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10 ];
 
-const colors = [ "#FFFF00", "#FFCC88", "#FFCC00", "FF8800", "FF0000", "#CC0088", "#FF88FF", "#8800CC", "#0000FF", "#008888", "#00CC00", "#CCFF00" ];
+const colors = [ "#FFFF00", "#FFCC88", "#FFCC00", "#FF8800", "#FF0000", "#CC0088", "#FF88FF", "#8800CC", "#0000FF", "#008888", "#00CC00", "#CCFF00" ];
 
 var baseNote = noteOffset;
 
