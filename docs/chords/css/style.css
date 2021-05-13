@@ -1,0 +1,23 @@
+table {
+	border-collapse: collapse;
+	empty-cells:show;
+	font-size: 100%;
+}
+tr, td, th {
+	border:1px solid #888888;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	background-color: #EEEEEE;
+}
+th + th {
+	text-align: right;
+}
+
+td {
+	text-align: left;
+	vertical-align: top;
+}       

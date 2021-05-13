@@ -15,7 +15,7 @@ function addSelectInstrument() {
 	var body = document.getElementsByTagName("body")[0];
 	var label = document.createElement("label");
 	label.for = "select-instrument";
-	label.innerHTML = "Select instrument:";
+	label.innerHTML = "Instrument: ";
 	body.appendChild(label);
 	var sel = document.createElement("select");
 	sel.name = "instrument";
@@ -57,6 +57,21 @@ function selectInstrument(_this) {
 	}
 	selectChord(baseNote,chordType);
 }
+// P prime / perfect, m minor, M major, d diminished, A augmented
+//                   C     Db    D     Eb    E     F     Gb    G     G#    A        Bb    B     C     Db    D     D#    E      F      F#     G      Ab    A
+const intervals = [ "P1", "m2", "M2", "m3", "M3", "P4", "d5", "P5", "A5", "M6/d7", "m7", "M7", "P8", "m9", "M9", "A9", "M10", "P11", "A11", "P12", "d13", "M13"];
+//  4     1     5     2     6     3     7
+// "Gb", "Db", "Ab", "Eb", "Bb", "F" , "C"
+// "Db", "Ab", "Eb", "Bb", "F" , "C" , "G"
+// "Ab", "Eb", "Bb", "F" , "C" , "G" , "D"
+// "Eb", "Bb", "F" , "C" , "G" , "D" , "A"
+// "Bb", "F" , "C" , "G" , "D" , "A" , "E"
+// "F" , "C" , "G" , "D" , "A" , "E" , "B"
+// "C" , "G" , "D" , "A" , "E" , "B" , "F#"
+// "G" , "D" , "A" , "E" , "B" , "F#", "C#"
+// "D" , "A" , "E" , "B" , "F#", "C#", "G#"
+// "A" , "E" , "B" , "F#", "C#", "G#", "D#"
+// "E" , "B" , "F#", "C#", "G#", "D#", "A#"
 
 // ♭ ♯
 //              0     1     2     3     4     5    6    7    8    9    10   11   12    13    14    15    16
@@ -101,28 +116,26 @@ function addSelectNote() {
 }
 
 const chordtypes = [
-	[ "major", "C E G", ""],
-	[ "major 6", "C E G A", "6"],
-	[ "dominant 7", "C E G Bb", "7"],
-	[ "major 7",  "C E G B", "∆7"],
-	[ "augmented", "C E G#", "+"],
-	[ "augmented seventh",  "C E G# Bb", "+7"],
+	[ "diminished", "C Eb Gb", "o"],
 	[ "minor",  "C Eb G", "m"],
+	[ "major", "C E G", ""],
+	[ "augmented", "C E G#", "+"],
+	[ "diminished seventh", "C Eb Gb A", "o7" ],
+	[ "half-diminished seventh", "C Eb Gb Bb", "ø" ],
 	[ "minor sixth", "C Eb G A", "m6"],
 	[ "minor seventh", "C Eb G Bb", "m7"],
 	[ "minor-major seventh", "C Eb G B", "mM7"],
-	[ "diminished", "C Eb Gb", "o"],
-	[ "diminished seventh", "C Eb Gb A", "o7" ],
-	[ "half-diminished seventh", "C Eb Gb Bb", "ø" ],
-	[ "dominant 9", "C E G Bb D", "9"],
-	[ "dominant 11", "C E G Bb D F", "11"],
-	[ "dominant 13", "C E G Bb D F A", "13"],
-	[ "seventh augmented fifth", "C E G# Bb", "7#5"],
+	[ "major 6", "C E G A", "6"],
+	[ "dominant 7", "C E G Bb", "7"],
+	[ "major 7",  "C E G B", "∆7"],
+	[ "seventh augmented fifth", "C E G# Bb", "+7"],
 	[ "seventh minor ninth", "C E G Bb Db", "7b9"],
+	[ "dominant 9", "C E G Bb D", "9"],
 	[ "seventh sharp ninth", "C E G Bb D#", "7#9"],
+	[ "dominant 11", "C E G Bb D F", "11"],
 	[ "seventh augmented eleventh", "C E G Bb D F#", "7#11"],
 	[ "seventh diminished thirteenth", "C E G Bb D F Ab", "7b13"],
-	[ "half-diminished seventh", "C Eb Gb Bb", "m7b5"],
+	[ "dominant 13", "C E G Bb D F A", "13"]
 ];
 
 var chordnotenumbers = [], chordnoteoffsets = [] ;
@@ -290,19 +303,25 @@ function selectChord(b,c) {
 }
 
 function addSelectTable() {
-	var h1 = document.createElement("h1");
-	h1.innerHTML="Chords";
-	document.getElementsByTagName("body")[0].appendChild(h1);
-
-	addSelectInstrument();
-
 	var div = document.createElement("div");
 	div.style.margin="20px";
 	var table = document.createElement("table");
-	table.border = "1";
+	//table.border = "1";
+	var tr = document.createElement("tr");
+	var th = document.createElement("th");
+	tr.appendChild(th);
+	for (var c=0; c<chordtypes.length; c++) {
+		th = document.createElement("th");
+		th.innerHTML = chordnotenumbers[c].length;
+		tr.appendChild(th);
+	}
+	table.appendChild(tr);
 	for (var o=0; o<order.length; o++) {
 		var tr = document.createElement("tr");
 		var i=order[o];
+		var th = document.createElement("th");
+		th.innerHTML = scale[(22+i-noteOffset+chordnotenumbers[0][0])%22];
+		tr.appendChild(th);
 		for (var c=0; c<chordtypes.length; c++) {
 			var td = document.createElement("td");
 			var a = document.createElement("a");
@@ -328,13 +347,14 @@ function addSelectElements() {
 var chordinfo ;
 
 function addChordInfo() {
-	chordinfo = document.createElement("p");
+	chordinfo = document.createElement("span");
 	chordinfo.id = "chordinfo";
 	document.getElementsByTagName("body")[0].appendChild(chordinfo);
 }
 
 function init() {
 	setChordNoteNumbers();
+	addSelectInstrument();
 	addSelectTable();
 	addChordInfo();
 	addCanvas();
