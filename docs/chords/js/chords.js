@@ -45,7 +45,7 @@ const chordTypes = [
 	[ "dominant 13", "C E G Bb D F A", "13"]
 ];
 
-var chordType = 0, chordTpcs = [], chordPitches = [];
+var chordType = 2, chordTpcs = [], chordPitches = [];
 
 function setChordPitches() {
 	for (var i=0; i<chordTypes.length; i++) {
