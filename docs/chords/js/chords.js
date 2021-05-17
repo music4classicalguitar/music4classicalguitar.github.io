@@ -1,126 +1,33 @@
-const instruments = [
-	[ "Guitar", ["E2", "A2", "D3", "G3", "B3", "E4"]],
-	[ "Bass guitar", ["E1", "A1", "D2", "G2"]],
-	[ "Tenor banjo", ["C3", "G3", "D4", "A4"]],
-	[ "Plectrum banjo", ["C3", "G3", "B3", "D4"]],
-	[ "Violin", ["G3", "D4", "A4", "E5"]],
-	[ "Viola", ["C3", "G3", "D4", "A4"]],
-	[ "Cello", ["C2", "G2", "D3", "A3"]],
-	[ "Double bass", ["E1", "A1", "D2", "G2"]]
-];
-
-var stringnotenumbers = [];
-
-function addSelectInstrument() {
-	var body = document.getElementsByTagName("body")[0];
-	var label = document.createElement("label");
-	label.for = "select-instrument";
-	label.innerHTML = "Instrument: ";
-	body.appendChild(label);
-	var sel = document.createElement("select");
-	sel.name = "instrument";
-	sel.id = "select-instrument";
-	sel.onchange = function() { selectInstrument(this); };
-	for (var i=0; i<instruments.length; i++) {
-		var option = document.createElement("option");
-		option.value = instruments[i][0];
-		var s = ":";
-		for (var n=0; n<instruments[i][1].length; n++) {
-			s += " "+instruments[i][1][n];
-		}
-		option.innerHTML = instruments[i][0]+s;
-		sel.appendChild(option);
-	}
-	body.appendChild(sel);
-}
-
-function setInstrument(i) {
-	stringnotes = instruments[i][1];
-	strings = stringnotes.length;
-	for (n=0;n<strings;n++) {
-		var note = stringnotes[n].substring(0,stringnotes[n].length-1).toUpperCase();
-		var p = scale.findIndex(e => e == note);
-		console.log("string "+n+" "+note+" "+p);
-		stringnotenumbers[n] = noteOffsets[p];
-	}
-	drawneck();
-}
-
-function selectInstrument(_this) {
-	var name = _this.value;
-	console.log("selectInstrument "+name);
-	for (i=0;i<instruments.length;i++) {
-		if (instruments[i][0] == name) {
-			setInstrument(i);
-			break;
-		}
-	}
-	selectChord(baseNote,chordType);
-}
-// P prime / perfect, m minor, M major, d diminished, A augmented
-//                   C     Db    D     Eb    E     F     Gb    G     G#    A        Bb    B     C     Db    D     D#    E      F      F#     G      Ab    A
-const intervals = [ "P1", "m2", "M2", "m3", "M3", "P4", "d5", "P5", "A5", "M6/d7", "m7", "M7", "P8", "m9", "M9", "A9", "M10", "P11", "A11", "P12", "d13", "M13"];
-//  4     1     5     2     6     3     7
-// "Gb", "Db", "Ab", "Eb", "Bb", "F" , "C"
-// "Db", "Ab", "Eb", "Bb", "F" , "C" , "G"
-// "Ab", "Eb", "Bb", "F" , "C" , "G" , "D"
-// "Eb", "Bb", "F" , "C" , "G" , "D" , "A"
-// "Bb", "F" , "C" , "G" , "D" , "A" , "E"
-// "F" , "C" , "G" , "D" , "A" , "E" , "B"
-// "C" , "G" , "D" , "A" , "E" , "B" , "F#"
-// "G" , "D" , "A" , "E" , "B" , "F#", "C#"
-// "D" , "A" , "E" , "B" , "F#", "C#", "G#"
-// "A" , "E" , "B" , "F#", "C#", "G#", "D#"
-// "E" , "B" , "F#", "C#", "G#", "D#", "A#"
-
-// ♭ ♯
-//              0     1     2     3     4     5    6    7    8    9    10   11   12    13    14    15    16
-const scale = ["Gb", "Db", "Ab", "Eb", "Bb", "F", "C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#"];
-const sl = scale.length;
-const noteOffset = 6 ;
-const order = [ 6, 13, 1, 8, 15, 3, 10, 5, 12, 0, 7, 14, 2, 9, 16, 4, 11 ];
-const noteOffsets = [ 6, 1, 8, 3, 10, 5, 0, 7, 2, 9, 4, 11, 6, 1, 8, 3, 10 ];
-
+const tonalPitchClass = [
+	"Fbb", "Cbb", "Gbb", "Dbb", "Abb", "Ebb", "Bbb",
+	"Fb", "Cb", "Gb", "Db", "Ab", "Eb", "Bb",
+	"F", "C", "G", "D", "A", "E", "B",
+	"F#", "C#", "G#", "D#", "A#", "E#", "B#",
+	"F##", "C##", "G##", "D##", "A##", "E##", "B##"];
+const tpcl = tonalPitchClass.length;
+const notes = [ 15, 22, 10, 17, 24, 12, 19, 14, 21, 9, 16, 23, 11, 18, 25, 13, 20];
 const colors = [ "#FFFF00", "#FFCC88", "#FFCC00", "#FF8800", "#FF0000", "#CC0088", "#FF88FF", "#8800CC", "#0000FF", "#008888", "#00CC00", "#CCFF00" ];
 
-var baseNote = noteOffset;
-
-function setBaseNote(i) {
-	baseNote = order[i];
+// C 0 C#/Db 1 ...
+// 'col' : tpc % 7, 'row' : Math.floor(tcp/7)
+function tpc2pitch(tpc) {
+	return (3+7*(tpc%7)+Math.floor(tpc/7))%12;
 }
 
-function selectBaseNote(_this) {
-	var value = _this.value;
-	for (var i=0; i<scale.length;i++) {
-		if (value == scale[i]) { setBaseNote(i); break; }		
-	}
+function note2tpc(note) {
+	return tonalPitchClass.indexOf(note);
 }
 
-function addSelectNote() {
-	var body = document.getElementsByTagName("body")[0];
-	var label = document.createElement("label");
-	label.for = "select-base-note";
-	label.innerHTML = "Select base note:";
-	body.appendChild(label);
-	var sel = document.createElement("select");
-	sel.name = "base-note";
-	sel.id = "select-base-note";
-	sel.onchange = function() { selectBaseNote(this); };
-	for (var i=0; i<order.length; i++) {
-		var option = document.createElement("option");
-		option.value = scale[order[i]];
-		option.innerHTML = scale[order[i]];
-		sel.appendChild(option);
-	}
-	body.appendChild(sel);
+function note2pitch(note) {
+	return tpc2pitch(tonalPitchClass.indexOf(note));
 }
 
-const chordtypes = [
+const chordTypes = [
 	[ "diminished", "C Eb Gb", "o"],
 	[ "minor",  "C Eb G", "m"],
 	[ "major", "C E G", ""],
 	[ "augmented", "C E G#", "+"],
-	[ "diminished seventh", "C Eb Gb A", "o7" ],
+	[ "diminished seventh", "C Eb Gb Bbb", "o7" ],
 	[ "half-diminished seventh", "C Eb Gb Bb", "ø" ],
 	[ "minor sixth", "C Eb G A", "m6"],
 	[ "minor seventh", "C Eb G Bb", "m7"],
@@ -138,21 +45,117 @@ const chordtypes = [
 	[ "dominant 13", "C E G Bb D F A", "13"]
 ];
 
-var chordnotenumbers = [], chordnoteoffsets = [] ;
+var chordType = 0, chordTpcs = [], chordPitches = [];
 
-function setChordNoteNumbers() {
-	for (var i=0; i<chordtypes.length; i++) {
-		var notes = chordtypes[i][1].split(" ");
-		var notenumbers = [];
-		var noteoffsets = [];
+function setChordPitches() {
+	for (var i=0; i<chordTypes.length; i++) {
+		var notes = chordTypes[i][1].split(" ");
+		chordTpcs[i] = [];
+		chordPitches[i] = [];
 		for (var n=0; n<notes.length; n++) {
-			notenumbers[n] = scale.indexOf(notes[n]);
-			noteoffsets[n] = noteOffsets[notenumbers[n]];
+			chordTpcs[i][n] = note2tpc(notes[n]);
+			chordPitches[i][n] = note2pitch(notes[n]);
 		}
-		chordnotenumbers[i] = notenumbers;
-		chordnoteoffsets[i] = noteoffsets;
-		console.log(chordtypes[i][1]+" "+chordnotenumbers[i]+" "+JSON.stringify(noteoffsets));
 	}
+}
+
+const instruments = [
+	[ "Guitar", ["E2", "A2", "D3", "G3", "B3", "E4"]],
+	[ "Bass guitar", ["E1", "A1", "D2", "G2"]],
+	[ "Tenor banjo", ["C3", "G3", "D4", "A4"]],
+	[ "Plectrum banjo", ["C3", "G3", "B3", "D4"]],
+	[ "Violin", ["G3", "D4", "A4", "E5"]],
+	[ "Viola", ["C3", "G3", "D4", "A4"]],
+	[ "Cello", ["C2", "G2", "D3", "A3"]],
+	[ "Double bass", ["E1", "A1", "D2", "G2"]],
+	[ "Piano/Keyboard", []]
+];
+
+const piano = instruments.length-1;
+var instrument = 0, strings, stringnotes;
+
+var stringNoteTpcs = [];
+
+function addSelectInstrument() {
+	var body = document.getElementsByTagName("body")[0];
+	var label = document.createElement("label");
+	label.for = "select-instrument";
+	label.innerHTML = "Instrument: ";
+	body.appendChild(label);
+	var sel = document.createElement("select");
+	sel.name = "instrument";
+	sel.id = "select-instrument";
+	sel.onchange = function() { selectInstrument(this); };
+	for (var i=0; i<instruments.length; i++) {
+		var option = document.createElement("option");
+		option.value = instruments[i][0];
+		var s = i==piano?"":":";
+		for (var n=0; n<instruments[i][1].length; n++) {
+			s += " "+instruments[i][1][n];
+		}
+		option.innerHTML = instruments[i][0]+s;
+		sel.appendChild(option);
+	}
+	body.appendChild(sel);
+}
+
+function setPiano() {
+	drawPiano();
+}
+
+function setStringInstrument(i) {
+	stringnotes = instruments[i][1];
+	strings = stringnotes.length;
+	for (n=0;n<stringnotes.length;n++) {
+		stringNoteTpcs[n] =  note2tpc(stringnotes[n].substring(0,stringnotes[n].length-1).toUpperCase());
+	}
+	drawNeck();
+}
+
+function setInstrument(i) {
+	instrument = i;
+	if (i==piano)setPiano();
+	else setStringInstrument(i);
+}
+
+function selectInstrument(_this) {
+	var name = _this.value;
+	for (i=0;i<instruments.length;i++) {
+		if (instruments[i][0] == name) {
+			setInstrument(i);
+			break;
+		}
+	}
+	selectChord(baseNoteTpc,chordType);
+}
+
+var baseNoteTpc = notes[0];
+
+function setbaseNoteTpc(i) {
+	baseNoteTpc = notes[i];
+}
+
+function selectbaseNoteTpc(_this) {
+	baseNoteTpc = setbaseNoteTpc(note2tpc(_this.value));
+}
+
+function addSelectNote() {
+	var body = document.getElementsByTagName("body")[0];
+	var label = document.createElement("label");
+	label.for = "select-base-note";
+	label.innerHTML = "Select base note:";
+	body.appendChild(label);
+	var sel = document.createElement("select");
+	sel.name = "base-note";
+	sel.id = "select-base-note";
+	sel.onchange = function() { selectbaseNoteTpc(this); };
+	for (var i=0; i<order.length; i++) {
+		var option = document.createElement("option");
+		option.value = scale[order[i]];
+		option.innerHTML = accidentals(scale[order[i]]);
+		sel.appendChild(option);
+	}
+	body.appendChild(sel);
 }
 
 function addSelectChord() {
@@ -164,34 +167,35 @@ function addSelectChord() {
 	var sel = document.createElement("select");
 	sel.name = "chord";
 	sel.id = "select-chord-type";
-	sel.onchange = function() { selectChordType(this); };
-	for (var i=0; i<chordtypes.length; i++) {
+	sel.onchange = function() { selectchordType(this); };
+	for (var i=0; i<chordTypes.length; i++) {
 		var option = document.createElement("option");
-		option.value = chordtypes[i][0];
-		option.innerHTML = chordtypes[i][0]+" : "+chordtypes[i][2];
+		option.value = chordTypes[i][0];
+		option.innerHTML = chordTypes[i][0]+" : "+chordTypes[i][2];
 		sel.appendChild(option);
 	}
 	body.appendChild(sel);
 }
 
-var chordType = 0;
-var chordNoteOffsets = [];
+var chordNotes = [], chordNotePitches = [] ;
 
 function setChordType(i) {
 	var s = "";
-	for (var j=0; j<chordnotenumbers[chordType].length; j++) {
-		var n = (sl+baseNote-noteOffset+chordnotenumbers[chordType][j])%sl;
-		chordNoteOffsets[j] = 
-		s += scale[n]+" ";
+	var b = baseNoteTpc-notes[0] ;
+	chordNotePitches = [] ;
+	for (var j=0; j<chordTpcs[chordType].length; j++) {
+		chordNotePitches[j] = tpc2pitch(b+chordTpcs[chordType][j]);
+		chordNotes[j] = tonalPitchClass[b+chordTpcs[chordType][j]];
+		s += "<span style=\"background-color: "+colors[chordPitches[chordType][j]%12]+";\">"+accidentals(chordNotes[j])+"</span> ";
 	}
-	s=accidentals(s);
+	chordinfo.innerHTML = "Chord: "+tonalPitchClass[baseNoteTpc]+chordTypes[chordType][2]+" ("+chordTypes[chordType][0]+"): "+s;
 }
 
-function selectChordType(_this) {
-	setChordType(_this.selectedIndex);
+function selectchordType(_this) {
+	setchordType(_this.selectedIndex);
 }
 
-function drawline(ctx, x1, y1, x2, y2) {
+function drawLine(x1, y1, x2, y2) {
 	ctx.beginPath();
 	x1 = Math.floor(x1);
 	y1 = Math.floor(y1);
@@ -202,7 +206,7 @@ function drawline(ctx, x1, y1, x2, y2) {
 	ctx.stroke();
 }
 
-function drawcircle(ctx, x, y, r, color) {
+function drawCircle(x, y, r, color) {
 	ctx.beginPath();
 	x = Math.floor(x);
 	y = Math.floor(y);
@@ -215,12 +219,64 @@ function drawcircle(ctx, x, y, r, color) {
 	ctx.stroke();
 }
 
+function drawRectangle(x1, y1, x2, y2, color) {
+	ctx.beginPath();
+	x1 = Math.floor(x1);
+	y1 = Math.floor(y1);
+	x2 = Math.floor(x2);
+	y2 = Math.floor(y2);
+	if (color) {
+		ctx.fillStyle = color;
+		ctx.fillRect(x1, y1, x2, y2);
+	} else {
+		ctx.rect(x1, y1, x2, y2);
+		ctx.stroke();
+	}
+}
+
+function drawPath(scale, xy, offset_x, color) {
+	ctx.beginPath();
+	var i=0, x, y;
+	x = Math.floor(borderwidth+scale*(xy[i][0]+offset_x));
+	y = Math.floor(borderwidth+scale*xy[i][1]);
+	ctx.moveTo(x,y);
+	for (i=1; i<xy.length; i++) {
+		x = Math.floor(borderwidth+scale*(xy[i][0]+offset_x));
+		y = Math.floor(borderwidth+scale*xy[i][1]);
+		ctx.lineTo(x,y);
+	}
+	ctx.closePath();
+	if (color) {
+		ctx.fillStyle = color;
+		ctx.fill();
+	} else ctx.stroke();
+}
+
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 var canvas, ctx, vl, l;
 const borderwidth = 0.02*vw, h = 0.02*vw, offset_x = 2*borderwidth, offset_y = borderwidth;
 const p = Math.exp(Math.log(2)/12);
 const frets = 15;
+
+const piano_wkl = 150, piano_wkw = 23+5/7, piano_bkl = 100, piano_bkw = 15;
+const piano_octaves = 3;
+const pianoscale = 5*h/piano_wkl;
+const piano_keys = [
+	[ [0, 0], [piano_wkw-10, 0], [piano_wkw-10, piano_bkl], [piano_wkw, piano_bkl], [piano_wkw, piano_wkl], [0, piano_wkl]],
+	[ [piano_wkw-10, 0], [piano_wkw+5, 0], [piano_wkw+5, piano_bkl], [piano_wkw-10, piano_bkl]],
+	[ [piano_wkw+5, 0], [2*piano_wkw-5, 0], [2*piano_wkw-5, piano_bkl], [2*piano_wkw, piano_bkl], [2*piano_wkw, piano_wkl], [piano_wkw, piano_wkl], [piano_wkw, piano_bkl], [piano_wkw+5, piano_bkl]],
+	[ [2*piano_wkw-5, 0], [2*piano_wkw+10, 0], [2*piano_wkw+10, piano_bkl], [2*piano_wkw-5, piano_bkl]],
+	[ [2*piano_wkw+10, 0],  [3*piano_wkw, 0], [3*piano_wkw, piano_wkl], [2*piano_wkw, piano_wkl], [2*piano_wkw, piano_bkl], [2*piano_wkw+10, piano_bkl]],
+	[ [3*piano_wkw, 0], [4*piano_wkw-11, 0], [4*piano_wkw-11, piano_bkl], [4*piano_wkw, piano_bkl], [4*piano_wkw, piano_wkl], [3*piano_wkw, piano_wkl], [3*piano_wkw, 0]],
+	[ [4*piano_wkw-11, 0], [4*piano_wkw+4, 0], [4*piano_wkw+4, piano_bkl], [4*piano_wkw-11, piano_bkl]],
+	[ [4*piano_wkw+4, 0], [5*piano_wkw-7.5, 0], [5*piano_wkw-7.5, piano_bkl], [5*piano_wkw, piano_bkl], [5*piano_wkw, piano_wkl], [4*piano_wkw, piano_wkl], [4*piano_wkw, piano_bkl], [4*piano_wkw+4, piano_bkl]],
+	[ [5*piano_wkw-7.5, 0], [5*piano_wkw+7.5, 0], [5*piano_wkw+7.5, piano_bkl], [5*piano_wkw-7.5, piano_bkl]],
+	[ [5*piano_wkw+7.5, 0], [6*piano_wkw-4, 0], [6*piano_wkw-4, piano_bkl], [6*piano_wkw, piano_bkl], [6*piano_wkw, piano_wkl], [5*piano_wkw, piano_wkl], [5*piano_wkw, piano_bkl], [5*piano_wkw+7.5, piano_bkl]],
+	[ [6*piano_wkw-4, 0], [6*piano_wkw+11, 0], [6*piano_wkw+11, piano_bkl], [6*piano_wkw-4, piano_bkl]],
+	[ [6*piano_wkw+11, 0], [7*piano_wkw, 0], [7*piano_wkw, piano_wkl], [6*piano_wkw, piano_wkl], [6*piano_wkw, piano_bkl], [6*piano_wkw+11, piano_bkl]]
+];
+const piano_black_keys = [ 1, 3, 6, 8, 10];
 
 function addCanvas() {
 	canvas = document.getElementById("Chords");
@@ -233,15 +289,35 @@ function addCanvas() {
 	ctx = canvas.getContext("2d");
 }
 
-function drawneck() {
+function drawPiano() {
+	var pianoChordNotePitches = chordNotePitches;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	console.log(vw+" "+vh+"  vl "+vl+" l "+l+" p "+p);
+	var o=0, pp = 0;
+	for (var i=0; i<chordTpcs[chordType].length; i++) {
+		var p = (12+tpc2pitch(baseNoteTpc)+tpc2pitch(chordTpcs[chordType][i]))%12;
+		if (p<pp) o=1;
+		pianoChordNotePitches[i] += o*12;
+		drawPath(pianoscale, piano_keys[p], o*7*piano_wkw, colors[tpc2pitch(chordTpcs[chordType][i])]);
+		pp = p;
+	}
+	for (var o=0; o<piano_octaves; o++) {
+		for (var i=0;i<piano_keys.length; i++) {
+			var color = piano_black_keys.indexOf(i)!=-1?"black":null;
+			if (pianoChordNotePitches.indexOf(i+12*o)==-1 && piano_black_keys.indexOf(i)!=-1) color = "black";
+			else color = null;
+			drawPath(pianoscale, piano_keys[i], o*7*piano_wkw, color);
+		}
+	}
+}
+
+function drawNeck() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	for (var i=0;i<strings;i++) {
-		drawline(ctx, offset_x, offset_y+i*h, offset_x+vl, offset_y+i*h);
+		drawLine(offset_x, offset_y+i*h, offset_x+vl, offset_y+i*h);
 	}
 	for (var i=0;i<=frets;i++) {
 		var x = offset_x+l*(1-Math.pow(p,-i));
-		drawline(ctx, x, offset_y, x, offset_y+(strings-1)*h);
+		drawLine(x, offset_y, x, offset_y+(strings-1)*h);
 	}
 	ctx.fillStyle = "#000000";
 	ctx.font = Math.floor(vw/100)+"px Arial";
@@ -269,37 +345,43 @@ function accidentals(s) {
 	while (p>=0) { s=s.substring(0,p)+"♭"+s.substring(p+1); p = s.indexOf("b"); }
 	p = s.indexOf("#");
 	while (p>=0) { s=s.substring(0,p)+"♯"+s.substring(p+1); p = s.indexOf("#"); }
-	p = s.indexOf("x");
-	while (p>=0) { s=s.substring(0,p)+"𝄪"+s.substring(p+1); p = s.indexOf("X"); }
+	p = s.indexOf("##");
+	while (p>=0) { s=s.substring(0,p)+"𝄪"+s.substring(p+1); p = s.indexOf("##"); }
 	return s;
+}
+
+function drawInstrument() {
+	if (instrument==piano) drawPiano();
+	else {
+		drawNeck();
+		drawStringNotes();
+	}
 }
 
 function setStringNote(str, pos, color) {
 	var r = Math.floor(vw/200);
 	var x = offset_x+l*(1-Math.pow(p,-pos))-2*r;
-	drawcircle(ctx, x, offset_y+(strings-str-1)*h, r, color);
+	drawCircle(x, offset_y+(strings-str-1)*h, r, color);
 }
 
-function selectChord(b,c) {
-	drawneck();
-	var s = "";
-	var notes = [] ;
-	for (var j=0; j<chordnotenumbers[c].length; j++) {
-		var n = (sl+b-noteOffset+chordnotenumbers[c][j])%sl;
-		notes[j] = (noteOffsets[b]+chordnoteoffsets[c][j])%12;
-		s += "<span style=\"background-color: "+colors[chordnoteoffsets[c][j]%12]+";\">"+scale[n]+"</span> ";
-	}
-	chordinfo.innerHTML = "Chord: "+scale[(sl+b-noteOffset+chordnotenumbers[c][0])%sl]+chordtypes[c][2]+" ("+chordtypes[c][0]+"): "+s;
-	for (var i=0; i<notes.length; i++) {
+function drawStringNotes() {
+	for (var i=0; i<chordTpcs[chordType].length; i++) {
 		for (n=0;n<strings;n++) {
-			var p = (12+notes[i]-stringnotenumbers[n])%12;				
-			setStringNote(n, p, colors[chordnoteoffsets[c][i]%12]);
+			var p = (12+chordNotePitches[i]-tpc2pitch(stringNoteTpcs[n]))%12;
+			setStringNote(n, p, colors[chordPitches[chordType][i]]);
 			p +=12;
 			if (p<=frets) {
-				setStringNote(n, p, colors[chordnoteoffsets[c][i]%12]);
+				setStringNote(n, p, colors[chordPitches[chordType][i]]);
 			}
 		}
 	}
+}
+
+function selectChord(b,c) {
+	baseNoteTpc = b;
+	chordType = c;
+	setChordType(b, c);
+	drawInstrument();
 }
 
 function addSelectTable() {
@@ -310,26 +392,26 @@ function addSelectTable() {
 	var tr = document.createElement("tr");
 	var th = document.createElement("th");
 	tr.appendChild(th);
-	for (var c=0; c<chordtypes.length; c++) {
+	for (var c=0; c<chordTypes.length; c++) {
 		th = document.createElement("th");
-		th.innerHTML = chordnotenumbers[c].length;
+		th.innerHTML = chordPitches[c].length;
 		tr.appendChild(th);
 	}
 	table.appendChild(tr);
-	for (var o=0; o<order.length; o++) {
+	for (var o=0; o<notes.length; o++) {
 		var tr = document.createElement("tr");
-		var i=order[o];
+		var i=notes[o];
 		var th = document.createElement("th");
-		th.innerHTML = scale[(22+i-noteOffset+chordnotenumbers[0][0])%22];
+		th.innerHTML = tonalPitchClass[notes[o]];
 		tr.appendChild(th);
-		for (var c=0; c<chordtypes.length; c++) {
+		for (var c=0; c<chordTypes.length; c++) {
 			var td = document.createElement("td");
 			var a = document.createElement("a");
 			let p1 = i, p2 = c;
 			a.onclick = function() { selectChord(p1,p2); };
 			a.href="#";
-			a.title = chordtypes[c][0];
-			a.innerHTML = scale[(22+i-noteOffset+chordnotenumbers[c][0])%22] + chordtypes[c][2];
+			a.title = chordTypes[c][0];
+			a.innerHTML = tonalPitchClass[notes[o]] + chordTypes[c][2];
 			td.appendChild(a);
 			tr.appendChild(td);
 		}
@@ -347,21 +429,20 @@ function addSelectElements() {
 var chordinfo ;
 
 function addChordInfo() {
-	chordinfo = document.createElement("span");
+	chordinfo = document.createElement("p");
 	chordinfo.id = "chordinfo";
 	document.getElementsByTagName("body")[0].appendChild(chordinfo);
 }
 
 function init() {
-	setChordNoteNumbers();
+	setChordPitches();
 	addSelectInstrument();
 	addSelectTable();
 	addChordInfo();
 	addCanvas();
-	setInstrument(0);
-	setBaseNote(0);
-	setChordType(0);
-	selectChord(baseNote,chordType);
+	setInstrument(instrument);
+	if (instrument!=0) document.getElementById("select-instrument").selectedIndex = instrument;
+	selectChord(baseNoteTpc,chordType);
 }
 
 
@@ -377,7 +458,7 @@ function showColors() {
 }
 
 function showChords() {
-	for (var c=0; c<chordtypes.length; c++) {
+	for (var c=0; c<chordTypes.length; c++) {
 		chordType = c ;
 		for (var o=0; o<order.length; o++) {
 			i=order[o];
