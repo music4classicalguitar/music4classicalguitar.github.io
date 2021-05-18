@@ -292,13 +292,13 @@ function addCanvas() {
 function drawPiano() {
 	var pianoChordNotePitches = chordNotePitches;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	var o=0, pp = 0;
+	var o=0, pk = 12*o+tpc2pitch(baseNoteTpc);
 	for (var i=0; i<chordTpcs[chordType].length; i++) {
 		var p = (12+tpc2pitch(baseNoteTpc)+tpc2pitch(chordTpcs[chordType][i]))%12;
-		if (p<pp) o=1;
+		if (12*o+p<pk) o++;
 		pianoChordNotePitches[i] += o*12;
 		drawPath(pianoscale, piano_keys[p], o*7*piano_wkw, colors[tpc2pitch(chordTpcs[chordType][i])]);
-		pp = p;
+		pk = 12*o+p;
 	}
 	for (var o=0; o<piano_octaves; o++) {
 		for (var i=0;i<piano_keys.length; i++) {
