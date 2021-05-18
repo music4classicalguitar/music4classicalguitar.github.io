@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <script type="text/javascript" src="js/ms_player.js"></script>
+    <title>Compostion</title>
+  </head>
+  <body>
+    <h1>Composition</h1>
+    <table border="1">
+      <tr><th>Part</th><th>Example</th><th>Comment</th></tr>
+      <tr><td>Begin</td><td id="notes_Begin" style="width: 100%; height: 260px"></td><td style="white-space: nowrap;">Start with this</td></tr>
+      <tr><td>Middle</td><td id="notes_Middle" style="height: 260px"></td><td style="white-space: nowrap;">Continue with this</td></tr>
+      <tr><td>End</td><td id="notes_End" style="height: 260px"></td><td style="white-space: nowrap;">Stop with this</td></tr>
+    </table>
+    <script type="text/javascript">
+      ms_player.load("Begin", { tagId : "notes_Begin"});
+      ms_player.load("Middle", { tagId : "notes_Middle"});
+      ms_player.load("End", { tagId : "notes_End"});
+    </script>
+  </body>
+</html>
