@@ -1,0 +1,20 @@
+table {
+	border-style: solid ;
+	border-collapse: collapse;
+	empty-cells:show;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+}
+th {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	background-color: #CCCCCC;
+}       
+td {
+	text-align: left;
+	vertical-align: top;
+}       
+tr:nth-child(even) {
+	background-color: #EEEEEE;
+}

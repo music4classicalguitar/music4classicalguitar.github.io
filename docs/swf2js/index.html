@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>swf2js</title>
+	</head>
+	<body>
+
+		<h1>Content</h1>
+		<ul>
+		</ul>
+		  <li><a href="#Background">Background</a></li>
+		  <li><a href="#Basic_usage">Basic usage</a></li>
+		  <li><a href="#Options">Options</a></li>
+		  <li><a href="#Examples">Examples</a></li>
+		  <li><a href="#Known_problems">Known problems</a></li>
+		  <li><a href="#Information">Information</a></li>
+		</ul>
+		
+		<h1 id="Background">Background</h1>
+		<p>swf2js.js is a JavaScript FlashPlayer emulator that analyzes SWF files of Adobe Animate (Flash) in real time and converts them to HTML.</p>
+		<p>swf2js.min.js is the minified version created with [Google Closure Compiler)(https://developers.google.com/closure/compiler).</p>
+		<p>This version is an adaption based on swf2js.js version 0.7.8 from <a href="https://github.com/swf2js/swf2js.com/blob/master/assets/js/swf2js.js">https://github.com/swf2js/swf2js.com/blob/master/assets/js/swf2js.js</a></p>
+		<p>Added support for sounds and soundstreams
+		<ul>
+			<li>Sounds : mp3, raw (wave), ADPCM, NellyMoser.</li>
+			<li>Soundstreams : mp3, raw (wave), ADPCM.</li>
+		</ul>
+		</p>
+<p>Warning : no support for Actionscript 3.</p>
+<p>For the source see <a href="https://github.com/music4classicalguitar/swf2js">https://github.com/music4classicalguitar/swf2js</a>.</p>
+		<p>See <a href="https://github.com/swf2js/swf2js">https://github.com/swf2js/swf2js</a> and <a href="https://swf2js.com/en/">https://swf2js.com/en/</a> for a commercial version that supports Actionscript 3.</p>
+		
+		<h1 id="Basic_usage">Basic usage</h1>
+		<pre>
+&lt;script type="text/javascript" src="swf2js.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    swf2js.load('SET SWF PATH');
+&lt;/script&gt;  
+		</pre>
+		<h1 id="Options">Options</h1>
+		<table>
+			<tr><th>Option</th><th>Description</th><th>Additional information</th></tr>
+			<tr><td>tagId</td><td>Place swf-player in element with tag 'tagId'</td><td></td></tr>
+			<tr><td>width</td><td>Set width of swf-player</td><td></td></tr>
+			<tr><td>height</td><td>Set height of swf-player</td><td></td></tr>
+			<tr><td>callback</td><td>Function to be called when swf-player has loaded the swf-file</td><td></td></tr>
+			<tr><td>FlashVars</td><td></td><td></td></tr>
+			<tr><td>quality</td><td>Values : "low", use devicePixelRatio*0.5  or "high", use devicePixelRatio</td><td>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio">devicePixelRatio</a></td></tr>
+			<tr><td>bgcolor</td><td>Set background color</td><td></td></tr>
+		</table>
+		<p>Example usage of options.</p>
+		<pre>
+&lt;div id="swf_1" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
+&lt;div id="swf_2" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="swf2js.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+        swf2js.load('analog20.swf', {tagId: "swf_1", width: 320, height});
+        swf2js.load('mogura.swf', {tagId: "swf_2"});
+&lt;/script&gt;  
+		</pre>
+		<p>See <a href="example_options.html">example_options.html</a></p>
+
+	<h1 id="Examples">Examples</h1>
+	<p><a href="examples.html">Examples</a></p>
+	<p><a href="../animatedmusic/animatedmusic.html">Animated music</a></p>
+
+	<h1 id="Known_problems">Known problems</h1>
+	<ul>
+	  <li>More than one swf-file in a page does not work properly.</li>
+	  <li>Obviously Adobe FlashPlayer knows the exact frame size, even if bigger than the specified framesize in the header.
+	  <br/>See examples : mogura and PlayPauseStop5</li>
+	  <li>Video (mp4 and flv) not supported.</li>
+	</ul>
+	<p>See also <a href="https://swf2js.com/en/#skills">https://swf2js.com/en/#skills</a> for the differences between the free and the commercial version.
+
+	<h1 id="Information">Information</h1>
+	<p><a href="https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf">SWF FILE FORMAT SPECIFICATION VERSION 19</a>
+	<br/>
+	https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf
+	</p>
+	
+	<p>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	</p>
+	</body>
+</html>

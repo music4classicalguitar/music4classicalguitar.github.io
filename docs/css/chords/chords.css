@@ -1,0 +1,41 @@
+.chord_parent {
+	display: block;
+	vertical-align: middle;
+	align-content: center;
+	text-align: center;
+}
+
+#select-div {
+	display: block;
+	vertical-align: middle;
+	align-content: center;
+	text-align: center;
+}
+
+.chord_select_child {
+	margin: 10px;
+	display: inline;
+	vertical-align: middle;
+	align-content: center;
+	text-align: center;
+	align-self: center;
+}
+
+#show-div {
+	display: block;
+	vertical-align: middle;
+	align-content: center;
+	text-align: center;
+}
+
+#instrument #chord-info {
+	display: block;
+}
+
+#instrument {
+   width: 100%;
+   text-align:center;
+}
+canvas {
+   display: inline;
+}
