@@ -1,0 +1,10 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Agustín Barrios Mangoré",
+	"scores": [
+		{ "name": "Agustín Barrios Mangoré - La Catedral - I Preludio saudade", "pages": 2 },
+		{ "name": "Agustín Barrios Mangoré - La Catedral - II Andante religioso", "pages": 1 },
+		{ "name": "Agustín Barrios Mangoré - La Catedral - III Allegro solemne", "pages": 3 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 6
+}
