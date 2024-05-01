@@ -1,6 +1,9 @@
 {
 	"directory": "scores/Guitar/Tablature/Classical music",
 	"scores": [
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Amando sobre o mar - tab", "pages": 3 },
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Não me toques - arr. Isaías Sávio - tab", "pages": 3 },
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Tardes em Lindoia - arr. Isidoro Geraldo - tab", "pages": 4 }
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 1 Valse - tab", "pages": 2 },
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 2 Valse - tab", "pages": 2 },
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 3 Valse - tab", "pages": 1 },
@@ -129,6 +132,7 @@
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 2 Serenata - tab", "pages": 2 },
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 3 Romance - tab", "pages": 2 },
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 4 Noche de luna - tab", "pages": 2 },
+		{ "name": "Chiquinha Gonzaga/Chiquinha Gonzaga - Lua Branca - arr. B. Alink - tab", "pages": 1 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Angostura - tab", "pages": 3 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Carora - tab", "pages": 3 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Cuatro valses venozolanos - No. 1 Tatania - tab", "pages": 2 },
@@ -171,8 +175,8 @@
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Adelita - tab", "pages": 1 },
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Lágrima - tab", "pages": 1 },
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Recuerdos de la Alhambra - tab", "pages": 6 },
-		{ "name": "Silvius Leopold Weiss/Silvius Leopold Weiss - Fantasie - tab", "pages": 3 }
+		{ "name": "Silvius Leopold Weiss/Silvius Leopold Weiss - Fantasie - tab", "pages": 3 },
 	],
 	"image": { "width": 2976, "height": 4209 },
-	"pages": 431
+	"pages": 442
 }

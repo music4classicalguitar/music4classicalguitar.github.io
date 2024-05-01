@@ -1,6 +1,9 @@
 {
 	"directory": "scores/Guitar/SheetMusic/Classical music",
 	"scores": [
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Amando sobre o mar", "pages": 2 },
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Não me toques - arr. Isaías Sávio", "pages": 2 },
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Tardes em Lindoia - arr. Isidoro Geraldo", "pages": 2 }
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 1 Valse", "pages": 1 },
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 2 Valse", "pages": 1 },
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 3 Valse", "pages": 1 },
@@ -40,7 +43,7 @@
 		{ "name": "Agustín Barrios Mangoré/Agustín Barrios Mangoré - La Catedral - II Andante religioso", "pages": 1 },
 		{ "name": "Agustín Barrios Mangoré/Agustín Barrios Mangoré - La Catedral - III Allegro solemne", "pages": 3 },
 		{ "name": "Ludwig van Beethoven/Ludwig van Beethoven - Für Elise", "pages": 3 },
-		{ "name": "Ludwig van Beethoven/Ludwig van Beethoven - Op. 13 Sonata No.8 Pathetique - No. II Adagio Cantabile - arr. Francisco Tárrega", "pages": 3 },
+		{ "name": "Ludwig van Beethoven/Ludwig van Beethoven - Op. 13 Sonata No.8 Pathetique - No. II Adagio Cantabile - arr. Francisco Tárrega", "pages": 4 },
 		{ "name": "Matteo Carcassi/Matteo Carcassi - Op. 50 Récréations Musicales - No. 21 La Clochette de Paganini (La Campanella)", "pages": 4 },
 		{ "name": "Matteo Carcassi/Matteo Carcassi - Op. 60 Vingt cinq études mélodiques et progressives - No. 1 Allegro", "pages": 1 },
 		{ "name": "Matteo Carcassi/Matteo Carcassi - Op. 60 Vingt cinq études mélodiques et progressives - No. 2 Moderato con espressivo", "pages": 2 },
@@ -129,6 +132,7 @@
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 2 Serenata", "pages": 1 },
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 3 Romance", "pages": 1 },
 		{ "name": "Daniel Fortea/Daniel Fortea - Op. 25 Estudios poéticos - No. 4 Noche de luna", "pages": 1 },
+		{ "name": "Chiquinha Gonzaga/Chiquinha Gonzaga - Lua Branca - arr. B. Alink", "pages": 1 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Angostura", "pages": 2 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Carora", "pages": 2 },
 		{ "name": "Antonio Lauro/Antonio Lauro - Cuatro valses venozolanos - No. 1 Tatania", "pages": 1 },
@@ -171,8 +175,8 @@
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Adelita", "pages": 1 },
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Lágrima", "pages": 1 },
 		{ "name": "Francisco Tárrega/Francisco Tárrega - Recuerdos de la Alhambra", "pages": 3 },
-		{ "name": "Silvius Leopold Weiss/Silvius Leopold Weiss - Fantasie", "pages": 2 }
+		{ "name": "Silvius Leopold Weiss/Silvius Leopold Weiss - Fantasie", "pages": 2 },
 	],
 	"image": { "width": 2976, "height": 4209 },
-	"pages": 249
+	"pages": 257
 }
