@@ -1,7 +1,7 @@
 {
 	"directory": "scores/Guitar/Tablature/Classical music",
 	"scores": [
-		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Amando sobre o mar - tab", "pages": 3 },
+		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Amando sobre o Mar - tab", "pages": 3 },
 		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Não me toques - arr. Isaías Sávio - tab", "pages": 3 },
 		{ "name": "Zequinha de Abreu/Zequinha de Abreu - Tardes em Lindoia - arr. Isidoro Geraldo - tab", "pages": 4 }
 		{ "name": "Dionisio Aguado/Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 1 Valse - tab", "pages": 2 },
@@ -71,8 +71,8 @@
 		{ "name": "Matteo Carcassi/Matteo Carcassi - Op. 60 Vingt cinq études mélodiques et progressives - No. 24 Andantino con espressione - tab", "pages": 3 },
 		{ "name": "Matteo Carcassi/Matteo Carcassi - Op. 60 Vingt cinq études mélodiques et progressives - No. 25 Allegretto brillante - tab", "pages": 6 },
 		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 1 Walze - tab", "pages": 1 },
-		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 2 Andante - tab", "pages": 1 },
-		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 3 Andante - tab", "pages": 1 },
+		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 2 Andante - tab", "pages": 2 },
+		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 3 Andante - tab", "pages": 2 },
 		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 4 Walze - tab", "pages": 1 },
 		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 5 Andantino - tab", "pages": 1 },
 		{ "name": "Ferdinando Carulli/Ferdinando Carulli - Op. 241 Méthode pour la guitare - No. 6 Poco Allegretto - tab", "pages": 1 },
@@ -178,5 +178,5 @@
 		{ "name": "Silvius Leopold Weiss/Silvius Leopold Weiss - Fantasie - tab", "pages": 3 },
 	],
 	"image": { "width": 2976, "height": 4209 },
-	"pages": 442
+	"pages": 444
 }
