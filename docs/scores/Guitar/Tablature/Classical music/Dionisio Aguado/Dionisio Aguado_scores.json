@@ -1,0 +1,31 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Dionisio Aguado",
+	"scores": [
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 1 Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 2 Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 3 Valse - tab", "pages": 1 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 4 Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 5 Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 6 Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 7 Minuetto - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 3 Huit Petites Pièces - No. 8 Minuetto - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 1 Minuet, Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 2 Minuet, Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 3 Minuet, Valse - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 4 Minuet, Allegro - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 5 Minuet, Valse - tab", "pages": 3 },
+		{ "name": "Dionisio Aguado - Op. 4 Six Petites Pièces - No. 6 Minuetto - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 1 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 2 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 3 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 4 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 5 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 6 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 7 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 8 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 9 - tab", "pages": 2 },
+		{ "name": "Dionisio Aguado - Op. 11 Les Favorites. Huit Contredanses - No. 10 - tab", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 48
+}

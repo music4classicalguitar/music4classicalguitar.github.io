@@ -1,0 +1,9 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Ludwig van Beethoven",
+	"scores": [
+		{ "name": "Ludwig van Beethoven - Für Elise", "pages": 3 },
+		{ "name": "Ludwig van Beethoven - Op. 13 Sonata No.8 Pathetique - No. II Adagio Cantabile - arr. Francisco Tárrega", "pages": 4 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 7
+}

@@ -1,0 +1,13 @@
+{
+	"directory": "scores/Guitar/Tablature/Arrangements",
+	"scores": [
+		{ "name": "Django Reinhardt - Tears - tab", "pages": 3 },
+		{ "name": "Donald Heywood - I'm coming Virginia - tab", "pages": 2 },
+		{ "name": "Ferdinand 'Jelly Roll' Morton - Buddy Bolden Blues - simpel - tab", "pages": 4 },
+		{ "name": "Ferdinand 'Jelly Roll' Morton - Buddy Bolden Blues - tab", "pages": 2 },
+		{ "name": "Walter Gross - Tenderly - tab", "pages": 3 },
+		{ "name": "Willie Brown - Mississippi blues - tab", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 16
+}

@@ -1,0 +1,13 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Julio Salvador Sagreras",
+	"scores": [
+		{ "name": "Julio Salvador Sagreras - El Colibri - tab", "pages": 5 },
+		{ "name": "Julio Salvador Sagreras - Op. 1 Dulces cadenas - tab", "pages": 4 },
+		{ "name": "Julio Salvador Sagreras - Op. 16 El inspirado - tab", "pages": 5 },
+		{ "name": "Julio Salvador Sagreras - Op. 19 Tres Piezas Fáciles - No. 1 Marcha - tab", "pages": 1 },
+		{ "name": "Julio Salvador Sagreras - Op. 19 Tres Piezas Fáciles - No. 2 Maria Luisa - tab", "pages": 2 },
+		{ "name": "Julio Salvador Sagreras - Op. 19 Tres Piezas Fáciles - No. 3 Nostalgia - tab", "pages": 1 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 18
+}

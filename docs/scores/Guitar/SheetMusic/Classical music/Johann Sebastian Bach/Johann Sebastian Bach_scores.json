@@ -1,0 +1,15 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Johann Sebastian Bach",
+	"scores": [
+		{ "name": "Johann Sebastian Bach - BWV 846 Prelude and Fugue in C major - Prelude", "pages": 2 },
+		{ "name": "Johann Sebastian Bach - BWV 996 Suite in E minor - No. 5 Bourrée", "pages": 1 },
+		{ "name": "Johann Sebastian Bach - BWV 997 Suite in C Minor for Lute - No. 1 Prelude - arr. Stefan Apke", "pages": 3 },
+		{ "name": "Johann Sebastian Bach - BWV 997 Suite in C Minor for Lute - No. 2 Fuge - arr. Stefan Apke", "pages": 5 },
+		{ "name": "Johann Sebastian Bach - BWV 997 Suite in C Minor for Lute - No. 3 Sarabande - arr. Stefan Apke", "pages": 2 },
+		{ "name": "Johann Sebastian Bach - BWV 997 Suite in C Minor for Lute - No. 4 Gigue - arr. Stefan Apke", "pages": 2 },
+		{ "name": "Johann Sebastian Bach - BWV 997 Suite in C Minor for Lute - No. 5 Double - arr. Stefan Apke", "pages": 3 },
+		{ "name": "Johann Sebastian Bach - BWV 999 Prelude in D Minor - arr. Stefan Apke", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 20
+}
