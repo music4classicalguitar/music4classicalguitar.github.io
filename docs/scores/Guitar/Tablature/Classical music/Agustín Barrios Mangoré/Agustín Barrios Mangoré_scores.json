@@ -1,10 +1,10 @@
 {
-	"directory": "scores/Guitar/Tablature/Classical music/Zequinha de Abreu",
+	"directory": "scores/Guitar/Tablature/Classical music/Agustín Barrios Mangoré",
 	"scores": [
-		{ "name": "Zequinha de Abreu - Amando sobre o Mar - tab", "pages": 3 },
-		{ "name": "Zequinha de Abreu - Não me toques - arr. Isaías Sávio - tab", "pages": 3 },
-		{ "name": "Zequinha de Abreu - Tardes em Lindoia - arr. Isidoro Geraldo - tab", "pages": 4 }
+		{ "name": "Agustín Barrios Mangoré - La Catedral - I Preludio saudade - tab", "pages": 3 },
+		{ "name": "Agustín Barrios Mangoré - La Catedral - II Andante religioso - tab", "pages": 2 },
+		{ "name": "Agustín Barrios Mangoré - La Catedral - III Allegro solemne - tab", "pages": 6 }
 	],
 	"image": { "width": 2976, "height": 4209 },
-	"pages": 10
+	"pages": 11
 }
