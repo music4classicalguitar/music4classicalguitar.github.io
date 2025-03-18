@@ -17,10 +17,7 @@ document.getElementById('input').addEventListener('change', function(e) {
 	if (e.target.files[0]) {
 		clear();
 		resize();
-		var fileReader  = new FileReader;
-		fileReader.readAsArrayBuffer(this.files[0]);
-		var url = URL.createObjectURL(this.files[0]); 
-		swf2js.load(url, { 'tagId': 'swf'});
+		swf2js.load(URL.createObjectURL(e.target.files[0]), { 'tagId': 'swf'});
 	}
 });
 

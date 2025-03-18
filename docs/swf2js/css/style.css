@@ -1,7 +1,6 @@
 body {
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-	font-size: 72%;
-	color: #0A1E5C;
+	font-size: 90%;
 	margin: 20px;
 }
 
@@ -58,5 +57,9 @@ td {
 
 pre {
 	font-family: 'Courier New' , monospace ;
-	font-size: 120%;
+	font-size: 100%;
+}
+
+hr {
+	color: #CCCCCC;
 }
