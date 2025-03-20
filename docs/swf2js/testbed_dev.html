@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/swf2js.min.dev.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<title>SWF testbed</title>
+	</head>
+	<body>
+		<h1 style="text-align:center">Testbed for SWF-files</h1>
+		<div>
+			<table class='center'>
+				<tr><td>
+					<label for="input">Choose an SWF-file</label><br>
+					<input type="file" id="input" accept=".swf"/><br>
+					<div id="buttons" style="text-align: center;">
+						<button type="button" id="play">Play</button>
+						<button type="button" id="step">Step</button>
+						<button type="button" id="stop">Stop</button>
+						<button type="button" id="clear">Clear</button>
+						<button type="button" id="reload">Reload</button>
+						<button type="button" id="info">Info</button>
+					</div>
+				</td>
+				<td>
+				<table class='center'>
+				<tr>
+					<td><label for "quality">Quality</label></td>
+					<td><select name="quality" id="quality">
+							<option value="low">low</option>
+							<option value="medium"  selected>medium (default)</option>
+							<option value="high">high</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for "audio">Audio</label></td>
+					<td><select name="audio" id="audio">
+						<option value="webaudio" selected>webaudio (default)</option>
+						<option value="webmedia">webmedia</option>
+						<option value="html5">html5</option>
+						<option value="audio">audio</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for "autoStart">AutoStart</label></td>
+					<td><select name="autoStart" id="autoStart">
+						<option value="1" selected>yes (default)</option>
+						<option value="0">no</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for "bgcolor">Background color</label></td>
+					<td><input type="color" id="bgcolor" style="width:100px;"></td>
+				</tr>
+				<tr>
+					<td><label for "width">Width</label></td>
+					<td><input id="width" style="width:100px;"></td>
+				</tr>
+				<tr>
+					<td><label for "height">Height</label></td>
+					<td><input id="height" style="width:100px;"></td>
+				</tr>
+			</table>
+		</td></tr>
+	</table>
+		</div>
+		<div id="swf" style="text-align: center;"></div>
+		<script type="text/javascript" src="js/testbed.js"></script>
+	</body>
+</html>
+
