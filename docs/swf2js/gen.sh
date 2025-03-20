@@ -4,7 +4,21 @@ cd /Library/WebServer/Documents/test/music4classicalguitar.github.io/docs/swf2js
 
 CreateFlashHtml()
 {
-  echo '<html lang="en">
+ 
+FILES=`ls *.swf`
+for FILE in ${FILES}
+  do
+  NAME=`echo "${FILE}" | sed 's/[.]swf//g'`
+  HTML_FILE="${NAME}_flash.html"
+  if [ ! -f "${HTML_FILE}" ]
+  then
+    CreateFlashHtml
+  fi
+  ls -l "${FILE}" "${NAME}.html" "${NAME}_flash.html"
+  echo
+  done
+
+ echo '<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>'"${NAME}"'</title>
@@ -18,15 +32,14 @@ CreateFlashHtml()
 </html>' > "${HTML_FILE}"
 }
 
+
 FILES=`ls *.swf`
 for FILE in ${FILES}
   do
   NAME=`echo "${FILE}" | sed 's/[.]swf//g'`
   HTML_FILE="${NAME}_flash.html"
-  if [ ! -f "${HTML_FILE}" ]
-  then
-    CreateFlashHtml
-  fi
-  ls -l "${FILE}" "${NAME}.html" "${NAME}_flash.html"
-  echo
+  git mv "${FILE}" "examples"
+  git mv "${NAME}.html" "examples"
+  git mv "${NAME}_flash.html" "examples"
+  echo "${NAME}"
   done

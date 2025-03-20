@@ -1,6 +1,6 @@
 body {
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-	font-size: 90%;
+	font-size: 100%;
 	margin: 20px;
 }
 
@@ -28,6 +28,12 @@ h5 {
 	font-size: 120%;
 }
 
+table.center {
+	margin-left: auto; 
+	margin-right: auto;
+	border-style: none ;
+}
+
 table {
 	border: 1px solid black;
 	background-color: #f9f9f9;
@@ -36,7 +42,6 @@ table {
 	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
 	border-collapse: collapse;
 	empty-cells:show;
-	font-size: 100%;
 }
 
 th {
@@ -45,19 +50,16 @@ th {
 	text-align: left;
 	vertical-align: top;
 	background-color: #CCCCCC;
-	font-size: 120%;
 }       
 	
 td {
 	border: 1px solid #AAAAAA;
 	text-align: left;
 	vertical-align: top;
-	font-size: 120%;
 }       
 
 pre {
 	font-family: 'Courier New' , monospace ;
-	font-size: 100%;
 }
 
 hr {
