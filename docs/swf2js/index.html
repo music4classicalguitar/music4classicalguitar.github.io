@@ -10,12 +10,13 @@
 		<h1>swf2js</h1>
 		<p>swf2js.js is a JavaScript FlashPlayer emulator that analyzes SWF files of Adobe Animate (Flash) in real time and converts them to HTML.</p>
 		<hr>
-		<h1>Content</h1>
+		<h2>Content</h2>
 		<ul>
 		  <li><a href="#Background">Background</a></li>
 		  <li><a href="#Basic_usage">Basic usage</a></li>
 		  <li><a href="#Options">Options</a></li>
 		  <li><a href="#Examples">Examples</a></li>
+		  <li><a href="#Advanced_usage">Advanced usage</a></li>
 		  <li><a href="#Testbed">Testbed</a></li>
 		  <li><a href="#Known_problems">Known problems</a></li>
 		  <li><a href="#Tools">Tools</a></li>
@@ -23,7 +24,7 @@
 		</ul>
 
 		<hr>
-		<h1 id="Background">Background</h1>
+		<h2 id="Background">Background</h2>
 		<p>This version of swf2js is an adaption based on swf2js.js version 0.7.24 from <a href="https://github.com/ienaga/swf2js ">https://github.com/ienaga/swf2js</a>.
 		<br>swf2js.min.js is the minified version created with <a href="https://developers.google.com/closure/compiler">Google Closure Compiler</a>.</p>
 		<p>For the source of swf2js see <a href="https://github.com/music4classicalguitar/swf2js">https://github.com/music4classicalguitar/swf2js</a>.</p>
@@ -38,7 +39,7 @@
 		<br>See also <a href="https://swf2js.com/en/#skills">https://swf2js.com/en/#skills</a> for the differences between the free and the commercial version.
 		
 		<hr>
-		<h1 id="Basic_usage">Basic usage</h1>
+		<h2 id="Basic_usage">Basic usage</h2>
 		<pre>
 &lt;script type="text/javascript" src="swf2js.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
@@ -47,7 +48,7 @@
 		</pre>
 
 		<hr>
-		<h1 id="Options">Options</h1>
+		<h2 id="Options">Options</h2>
 		<table>
 			<tr><th>Option</th><th>Description</th></tr>
 			<tr><td>tagId</td><td>Place swf-player in element with tag 'tagId'</td></tr>
@@ -59,6 +60,7 @@
 			<tr><td>audioType</td><td>"webaudio" (default), "webmedia", "html5", "audio"</td></tr>
 			<tr><td>bgcolor</td><td>Set background color</td></tr>
 		</table>
+		<p>Quality: for mobile devices default 0.6.</p>
 		<p>Audio: default depending on what is supported by your browser.</p>
 		<p>Example usage of options.</p>
 		<pre>&lt;div id="swf_1" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
@@ -75,27 +77,46 @@ swf2js.load('tiger.swf', {tagId: "swf_instance", width: "320", height: "320", ca
 		<p>See <a href="example_options.html">example_options.html</a></p>
 
 		<hr>
-		<h1 id="Examples">Examples</h1>
+		<h2 id="Examples">Examples</h2>
 		<p><a href="examples/examples.html">Examples</a></p>
 		<p><a href="animatedmusic/animatedmusic.html">Animated music</a></p>
 
 		<hr>
-		<h1 id="Testbed">Testbed</h1>
+		<h2 id="Advanced_usage">Advanced usage</h2>
+		<p>If you want more control, use:</p>
+		<pre>var swf = swf2js.load('your swf-file', {...your options...});</pre>
+		<p>after which you can use:</p>
+		<table>
+			<tr><th>Functions</th><th>Description</th></tr>
+			<tr><td>play()</td><td>Start playing</td></tr>
+			<tr><td>stop()</td><td>Stop playing</td></tr>
+			<tr><td>step()</td><td>Advance one frame</td></tr>
+			<tr><td>showInfo()</td><td>Show info about the current swf-file</td></tr>
+		</table>
+		<p>Example: if you have a button with id='play':</p>
+		<pre>document.getElementById('play').addEventListener('click', function(e) {
+  swf.play();
+});</pre>
+
+		<hr>
+		<h2 id="Testbed">Testbed</h2>
 		<p>To test with your own SWF-files:
 		<br>try <a href="testbed.html">testbed.html</a> for the latest version
 		<br>try <a href="testbed_dev.html">testbed_dev.html</a> for a temporary development version</p>
 
+		<h3>Alternative</h3>
+		<p>An alternative for swf2js is <a href="https://ruffle.rs/">Ruffle</a> (see also <a href="https://github.com/ruffle-rs/ruffle">github</a>).
+		<br>Try it here on <a href="testbed_ruffle.html">testbed_ruffle.html</a> for ruffle (nightly.2025.3.21) or on the <a href="https://ruffle.rs/demo/">demo</a> on https://ruffle.rs.</p>
+
 		<hr>
-		<h1 id="Known_problems">Known problems</h1>
+		<h2 id="Known_problems">Known problems</h2>
 		<ul>
-		  <li>More than one swf-file in a page does not work properly.</li>
-	 	 <li>Obviously Adobe FlashPlayer knows the exact frame size, even if bigger than the specified framesize in the header.
-		  <br>See examples : mogura and PlayPauseStop5</li>
-	 	 <li>Video (mp4 and flv) not supported.</li>
+			<li>More than one swf-file in a page does not work properly.</li>
+	 		<li>Video (mp4 and flv) not supported.</li>
 		</ul>
 
 		<hr>
-		<h1 id="Tools">Tools</h1>
+		<h2 id="Tools">Tools</h2>
 		<p>Useful tools to analyze SWF-files are:</p>
 		<ul>
 			<li><a href="https://github.com/jindrapetrik/jpexs-decompiler">jpexs-decompiler</a></li>
@@ -103,14 +124,11 @@ swf2js.load('tiger.swf', {tagId: "swf_instance", width: "320", height: "320", ca
 		</ul>
 
 		<hr>
-		<h1 id="Information">Information</h1>
-		<p><a href="https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf">SWF FILE FORMAT SPECIFICATION VERSION 19</a>
-		<br>
-		https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf
+		<h2 id="Information">Information</h2>
+		<p>See 
+		<a href="https://open-flash.github.io/mirrors/swf-spec-19.pdf">SWF FILE FORMAT SPECIFICATION VERSION 19</a> on <a href="https://open-flash.github.io/">https://open-flash.github.io/</a>.
 		</p>
-		<p>If you have (or can find) Flash MX 2004 or Flash (Professional) 8, you can stil create sfw-files and use them with swf2js.js
-		<br>Licenses for Adobe Flash can be found on <a href="https://helpx.adobe.com/en/x-productkb/policy-pricing/macromedia-legacy-activation-error.html">https://helpx.adobe.com/en/x-productkb/policy-pricing/macromedia-legacy-activation-error.html</a></p>
-	
+		<p>If you have (or can find) Flash MX 2004 or Flash (Professional) 8, you can stil create sfw-files and use them with swf2js.js</p>
 	<p>
 	<br>
 	<br>
