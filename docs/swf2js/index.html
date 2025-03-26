@@ -59,9 +59,11 @@
 			<tr><td>quality</td><td>"low": 0.25, "medium": 0.8 (default), "high": 1.0</td></tr>
 			<tr><td>audioType</td><td>"webaudio" (default), "webmedia", "html5", "audio"</td></tr>
 			<tr><td>bgcolor</td><td>Set background color</td></tr>
+			<tr><td>autoStart</td><td>true: start animation, false: don't start animation (show a button to start)</td></tr>
 		</table>
-		<p>Quality: for mobile devices default 0.6.</p>
-		<p>Audio: default depending on what is supported by your browser.</p>
+		<p>quality: for mobile devices default 0.6.
+		<br>audioType: default depending on what is supported by your browser.
+		<br>autoStart: depends on whether the swf-file contains sounds and/or video and whether autoplay of audio and/or video is allowed.</p>
 		<p>Example usage of options.</p>
 		<pre>&lt;div id="swf_1" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
 &lt;div id="swf_2" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
@@ -72,9 +74,11 @@
 &lt;/script&gt;</pre>
 		<p>Example with a callback function:</p>
 		<pre>&lt;script&gt;function informMe(arg) {  alert("informMe : swf-file loaded"); }
-swf2js.load('tiger.swf', {tagId: "swf_instance", width: "320", height: "320", callback : informMe, bgcolor: "black"});
+swf2js.load('tiger.swf', {
+  "tagId": "swf_instance", "width": "320", "height": "320",
+  "autoStart" : true, "callback" : informMe, "bgcolor": "black" });
 &lt;/script&gt;</pre>
-		<p>See <a href="example_options.html">example_options.html</a></p>
+		<p>See <a href="examples/example_options.html">example_options.html</a></p>
 
 		<hr>
 		<h2 id="Examples">Examples</h2>
@@ -107,6 +111,7 @@ swf2js.load('tiger.swf', {tagId: "swf_instance", width: "320", height: "320", ca
 		<h3>Alternative</h3>
 		<p>An alternative for swf2js is <a href="https://ruffle.rs/">Ruffle</a> (see also <a href="https://github.com/ruffle-rs/ruffle">github</a>).
 		<br>Try it here on <a href="testbed_ruffle.html">testbed_ruffle.html</a> for ruffle (nightly.2025.3.21) or on the <a href="https://ruffle.rs/demo/">demo</a> on https://ruffle.rs.</p>
+		<p>You can see the same example <a href="ruffle/animatedmusic.html">Animated music</a> with ruffle instead of swf2js.</p>
 
 		<hr>
 		<h2 id="Known_problems">Known problems</h2>

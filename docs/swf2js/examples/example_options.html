@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+        <script type="text/javascript" src="js/swf2js.min.js"></script>
+        <title>flash_</title>
+    </head>
+    <body>
+        <table>
+            <tr><td>Column 1 in table</td><td id="swf_instance">Column 2 in table</td</tr>
+        </table>
+        <script type="text/javascript">
+            function informMe(arg) {
+                alert("informMe : swf-file loaded");
+            }
+            swf2js.load('tiger.swf', {
+              "tagId": "swf_instance", "width": "320", "height": "320",
+              "autoStart" : true, "callback" : informMe, "bgcolor": "black" });
+        </script>  
+    </body>
+</html>
