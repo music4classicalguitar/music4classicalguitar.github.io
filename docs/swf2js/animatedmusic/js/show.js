@@ -23,8 +23,19 @@ function show_flash() {
 }
 
 function show_javascript() {
+	const q = ',sitemap,vv,vvdvor,vvfanf,vvjpianson';
+	const nosound=',links,ofra,quizned,sitemap,varia,vv,'; 
+	var options = {};
+	if (q.includes(','+name+',')) options.quality = 'high';
+	if (nosound.includes(','+name+',')) options.autoStart = true;
 	document.title=name.charAt(0).toUpperCase() + name.slice(1) + " - Javascript";
-    swf2js.load(name+".swf");
+	if (Object.keys(options).length > 0) {
+		console.log(JSON.stringify(options));
+		swf2js.load(name+".swf", options);
+    } else {
+    	console.log('No options: '+JSON.stringify(options));
+    	swf2js.load(name+".swf");
+    }
 }
 
 var page=window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
