@@ -18,16 +18,6 @@ var _quality = document.getElementById('quality');
 var _bgcolor = document.getElementById('bgcolor');
 var _autoPlay = document.getElementById('autoPlay');
 
-function clear() {
-	if (_swf_player) {
-		_swf_player.pause();
-		//while (div_swf.firstChild) {
-    	//	div_swf.removeChild(div_swf.firstChild);
-		//}
-	}
-	console.log('Clear');
-}
-
 function load(obj) {
 	var _options = {
 		"preloader":false,
@@ -48,18 +38,9 @@ function load(obj) {
 		document.getElementById('stop').addEventListener('click', function(e) {
 			_swf_player.pause();
 		});
-		document.getElementById('step').addEventListener('click', function(e) {
-			_swf_player.play();
-			_swf_player.pause();
-		});
 		document.getElementById('reload').addEventListener('click', function(e) {
 			//_swf_player.reload();
 			load(_swf_object)
-		});
-		document.getElementById('clear').addEventListener('click', function(e) {
-			console.log('clear');
-			document.getElementById('input').value = '';
-			clear();
 		});
 		document.getElementById('info').addEventListener('click', function(e) {
 			var parent = div_swf.parentNode;
