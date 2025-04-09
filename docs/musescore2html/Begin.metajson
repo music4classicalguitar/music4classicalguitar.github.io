@@ -1,0 +1,46 @@
+{
+    "composer": "Composer",
+    "duration": 4,
+    "fileVersion": 301,
+    "hasHarmonies": "false",
+    "hasLyrics": "false",
+    "keysig": 0,
+    "lyrics": "",
+    "measures": 2,
+    "mscoreVersion": "3.5.2",
+    "pageFormat": {
+        "height": 25,
+        "twosided": "false",
+        "width": 168
+    },
+    "pages": 1,
+    "parts": [
+        {
+            "harmonyCount": 0,
+            "hasDrumStaff": "false",
+            "hasPitchedStaff": "true",
+            "hasTabStaff": "false",
+            "instrumentId": "",
+            "isVisible": "true",
+            "lyricCount": 0,
+            "name": "Piano",
+            "program": 0
+        }
+    ],
+    "poet": "",
+    "subtitle": "",
+    "tempo": 120,
+    "tempoText": "<b></b><font face=\"ScoreText\"></font><b><font face=\"FreeSerif\"></font> = 120</b>",
+    "textFramesData": {
+        "composers": [
+        ],
+        "poets": [
+        ],
+        "subtitles": [
+        ],
+        "titles": [
+        ]
+    },
+    "timesig": "4/4",
+    "title": "Title"
+}

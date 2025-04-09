@@ -1,0 +1,13 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Antonio Lauro",
+	"scores": [
+		{ "name": "Antonio Lauro - Angostura - tab", "pages": 3 },
+		{ "name": "Antonio Lauro - Carora - tab", "pages": 3 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 1 Tatania - tab", "pages": 2 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 2 Andreina - tab", "pages": 2 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 3 Natalia - tab", "pages": 3 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 4 Yacambu - tab", "pages": 4 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 17
+}

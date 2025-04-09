@@ -1,0 +1,10 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Anonymous",
+	"scores": [
+		{ "name": "Anonymous - El Testamen d'Amelia - arr. Miguel Llobet", "pages": 1 },
+		{ "name": "Anonymous - Mi favorita (Mazurka) - arr. Daniel Fortea", "pages": 2 },
+		{ "name": "Anonymous - Romance", "pages": 1 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 4
+}

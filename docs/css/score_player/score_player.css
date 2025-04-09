@@ -1,0 +1,153 @@
+/* style for score_player */
+div.score_player {
+	position: relative;
+	width: 100%;
+	height: 90%;
+}
+div.score_controls_div {
+	width: 98%;
+	height: 40px;
+	background-color: white;
+}
+div.score_control {
+	width: 10%;
+	float: left;
+}
+div.score_control_time, span.tempo {
+	width: 18%;
+	height: 40px;
+	line-height: 30px;
+	float: left;
+	display: table-cell;
+	text-align: center;
+}
+button.score_control_button {
+	display: flex;
+	align-items: center;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.score_control_button:hover {
+	background-color: #EEEEEE;
+}
+button.score_metronome {
+	background-color: #0000;
+	border: none;
+	width: 32px;
+	height: 32px;
+	pointer-events: none;
+}
+div.score_loop {
+	z-index: 100;
+	position: absolute;
+	top: 100px;
+	left: 150px;
+	width: auto;
+	background-color: white;
+	border: 10px solid white;
+	display:none;
+}
+button.score_loop_button {
+	float: right;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.score_loop_button:hover {
+	background-color: #EEEEEE;
+}
+button.score_loop_set {
+	display: block;
+	float: left;
+	border: solid;
+	border-color: #CCCCCC;
+}
+button.score_loop_set:hover {
+	background-color: #EEEEEE;
+}
+button.score_tempo {
+	width: 32px;
+	height: 32px;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+	font-size: 120%;
+}
+button.score_tempo:hover {
+	background-color: #EEEEEE;
+}
+span.score_tempo {
+	line-height: 30px;
+	text-align: center;
+}
+button.score_loop_block {
+	display: block;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.score_loop_block:hover {
+	background-color: #EEEEEE;
+}
+div.score_div {
+	overflow-y: auto;
+	position: absolute;
+	border: solid;
+	border-width: 5px;
+	border-color: #CCCCCC;
+	width: 100%;
+}
+table.no_border, table.no_border tr, table.no_border th, table.no_border td {
+	table-layout: fixed;
+	border-style: none ;
+	text-align: left;
+}
+img.score_image {
+	width: 100%;
+}
+div.score_container {
+	z-index: 1;
+	position: relative;
+}
+img.score_container {
+	z-index: 1;
+	position: relative;
+}
+input.score_audio_position {
+	width: 100%;
+}
+div.score_elid:hover {
+	background-color: red;
+	opacity: 0.1;
+}
+div.score_loader {
+	position: relative;
+	margin: auto;
+	vertical-align: middle;
+	border: 8px solid #F0F0F0;
+	border-radius: 50%;
+	border-top: 8px solid #808080;
+	width: 32px;
+	height: 32px;
+	-webkit-animation: spin 2s linear infinite;
+	/* Safari */
+	animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		}
+	}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
