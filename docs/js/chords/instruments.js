@@ -33,6 +33,11 @@ class Instruments {
 				image: 'IrishBanjoNeck.png', width: '761', height: '144',
 				string_offset_x: '33', string_offset_y_mid: '71', string_length: '1078', strings_width: ['52', '65'],
 				clef: 'treble_8vb', transpose: 12
+			},
+			{ instrument: 'Ukulele', strings: ['G4', 'C4', 'E4', 'A4'],
+				image: 'UkuleleNeck.png', width: '1105', height: '211',
+				string_offset_x: '35', string_offset_y_mid: '100', string_length: '1560', strings_width: ['101', '124'],
+				clef: 'treble', transpose: 0
 			}/*,
 			{ instrument: 'Violin', strings: ['G3', 'D4', 'A4', 'E5'],
 				image: 'ViolinPart.png', width: '4318', height: '745',
