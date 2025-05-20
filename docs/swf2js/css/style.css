@@ -58,6 +58,12 @@ td {
 	vertical-align: top;
 }       
 
+table.no_border, table.no_border tr, table.no_border th, table.no_border td {
+	table-layout: fixed;
+	border-style: none ;
+	text-align: left;
+}
+
 pre {
 	font-family: 'Courier New' , monospace ;
 }

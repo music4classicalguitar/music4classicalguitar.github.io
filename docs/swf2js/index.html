@@ -9,7 +9,7 @@
 
 		<h1>swf2js</h1>
 		<p>swf2js.js is a JavaScript FlashPlayer emulator that analyzes SWF files of Adobe Animate (Flash) in real time and converts them to HTML.</p>
-		<p>The current version is 1.2.7.
+		<p>The current version is 1.2.9.
 		<br>Added support for sounds and (multiple) soundstreams and synchronisation of sound and animation.</p>
 		<ul>
 			<li>Sounds : mp3, raw (wave), ADPCM, NellyMoser.</li>
@@ -61,6 +61,14 @@
 		<p>quality: for mobile devices default 0.6.
 		<br>audioType: default depending on what is supported by your browser.
 		<br>autoStart: depends on whether the swf-file contains sounds and/or video and whether autoplay of audio and/or video is allowed.</p>
+		<p>Audiotype see for details:</p>
+			<table class="no_border">
+				<tr><td>webaudio</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</a></td></tr>
+				<tr><td>webmedia</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext">developer.mozilla.org/en-US/docs/Web/API/AudioContext</a></td></tr>
+				<tr><td>html5</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement">developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement</a></td></tr>
+				<tr><td>audio</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">developer.mozilla.org/en-US/docs/Web/HTML/Element/audi</a></td></tr>
+			</table>
+
 		<p>Example usage of options.</p>
 		<pre>&lt;div id="swf_1" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
 &lt;div id="swf_2" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
