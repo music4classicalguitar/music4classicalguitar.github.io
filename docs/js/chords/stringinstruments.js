@@ -45,14 +45,7 @@ class Instruments {
 		this.stringNotes = [];
 		this.stringOctaves = [];
 		this.setInstrument(this.instrumentIndex);
-		this.canvas;
-		this.canvas_context;
-		this.canvas_parent;
-		this.image;
-		this.image_width;
-		this.image_height;
-		this.loaded = false;
-		this.scale = 1;
+
 		this.stringChordNotes;
 		this.notepositions = [] ;
 		let c = 1/Math.pow(2,1/12);
