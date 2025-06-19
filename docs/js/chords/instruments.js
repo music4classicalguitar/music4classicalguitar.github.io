@@ -308,4 +308,4 @@ class Instruments {
 			else if (this.canvas_parent) this.addStringInstrument(this.canvas_parent);
 		}
 	}
-}	
+}
