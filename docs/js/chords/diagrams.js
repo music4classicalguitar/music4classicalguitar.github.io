@@ -6,11 +6,6 @@ class Diagrams {
 		this.colors = [ '#FFFF00', '#FFCC88', '#FFCC00', '#FF8800', '#FF0000', '#CC0088', '#FF88FF', '#DD00FF', '#6666FF', '#008888', '#00CC00', '#CCFF00' ];
 		this.instruments = new Instruments();
 		this.instruments.instrumentList = this.instruments.instrumentList.filter((entry) => entry.instrument !='Piano/Keyboard');
-		if (instrument!='') {
-			this.instrumentIndex = instrument;
-			let index = this.instruments.instrumentList.findIndex(s => s.instrument == instrument);
-			if (index>=0) this.setInstrument(instrument)
-		}
 		this.notenames = new NoteNames();
 		this.chordtypes = new ChordTypes();
 		this.chordtypes.notenames = this.notenames;
@@ -22,7 +17,7 @@ class Diagrams {
 		this.selectdiv = document.createElement('div');
 		this.selectdiv.id = 'select-div';
 		this.parent.append(this.selectdiv);
-		let currentparent = this.selectdiv;
+		var currentparent = this.selectdiv;
 		
 		this.addSelectInstrument(currentparent);
 		this.addSelectBaseNoteTpc(currentparent);
@@ -31,11 +26,12 @@ class Diagrams {
 		currentparent = this.parent;
 		this.setNotes();
 		this.addChordInfo(currentparent);
-		//this.addInstrument(currentparent);
-		this.update();
-	}
-
-	setStringInstrument(i) {
+		if (instrument!='') {
+			var index = this.instruments.instrumentList.findIndex(s => s.instrument == instrument);
+			if (index>=0) this.setInstrument(index);
+			var sel = document.getElementById('select-instrument');
+			sel.selectedIndex = this.instruments.instrumentIndex;
+		}
 		this.update();
 	}
 	
@@ -49,23 +45,23 @@ class Diagrams {
 	}
 
 	addSelectInstrument(parent) {
-		let _this = this;
-		let label = document.createElement('label');
+		var _this = this;
+		var label = document.createElement('label');
 		label.for = 'select-instrument';
 		label.innerHTML = 'Select an instrument: ';
 		label.classList.add('chord_select_child');
 		parent.appendChild(label);
-		let sel = document.createElement('select');
+		var sel = document.createElement('select');
 		sel.name = 'instrument';
 		sel.id = 'select-instrument';
 		sel.onchange = function() {
 			_this.selectInstrument(this);
 		};
-		for (let  i=0; i<this.instruments.instrumentList.length; i++) {
-			let  option = document.createElement('option');
+		for (var  i=0; i<this.instruments.instrumentList.length; i++) {
+			var  option = document.createElement('option');
 			option.value = this.instruments.instrumentList[i].instrument;
 			var s = ' ';
-			for (let  n=0; n<this.instruments.instrumentList[i].strings.length; n++) {
+			for (var  n=0; n<this.instruments.instrumentList[i].strings.length; n++) {
 				s += this.instruments.instrumentList[i].strings[n];
 			}
 			option.innerHTML = this.instruments.instrumentList[i].instrument+s;
@@ -86,20 +82,20 @@ class Diagrams {
 	}
 
 	addSelectBaseNoteTpc(parent) {
-		let _this = this;
-		let p = document.createElement('p');
+		var _this = this;
+		var p = document.createElement('p');
 		parent.append(p);
-		let label = document.createElement('label');
+		var label = document.createElement('label');
 		label.for = 'select-base-note';
 		label.innerHTML = 'Select base note: ';
 		label.classList.add('chord_select_child');
 		parent.appendChild(label);
-		let sel = document.createElement('select');
+		var sel = document.createElement('select');
 		sel.name = 'base-note';
 		sel.id = 'select-base-note';
 		sel.onchange = function() { _this.selectBaseNoteTpc(this); };
-		for (let i=0; i<this.notenames.baseNoteTpcs.length; i++) {
-			let option = document.createElement('option');
+		for (var i=0; i<this.notenames.baseNoteTpcs.length; i++) {
+			var option = document.createElement('option');
 			option.value = this.notenames.getBaseNote(i);
 			option.innerHTML = option.value;
 			sel.appendChild(option);
@@ -118,27 +114,27 @@ class Diagrams {
 	}
 
 	addSelectChordType(parent) {
-		let _this = this;
-		let label = document.createElement('label');
+		var _this = this;
+		var label = document.createElement('label');
 		label.for = 'select-chord-type';
 		label.innerHTML = 'Select chordtype: ';
 		label.classList.add('chord_select_child');
 		parent.appendChild(label);
-		let sel = document.createElement('select');
+		var sel = document.createElement('select');
 		sel.name = 'chord';
 		sel.id = 'select-chord-type';
 		sel.onchange = function() { _this.selectChordType(this); };
-		let len = 0;
-		let optgroup;
-		for (let i=0; i<this.chordtypes.chordTypes.length; i++) {
-			let chord_notes = this.chordtypes.chordTypes[i][2].split(" ");
+		var len = 0;
+		var optgroup;
+		for (var i=0; i<this.chordtypes.chordTypes.length; i++) {
+			var chord_notes = this.chordtypes.chordTypes[i][2].split(" ");
 			if (chord_notes.length!=len) {
 				if (optgroup) sel.appendChild(optgroup);
 				len = chord_notes.length;
 				optgroup = document.createElement("optgroup");
 				optgroup.label = 'Chords with '+len+' notes';
 			}
-			let option = document.createElement("option");
+			var option = document.createElement("option");
 			option.value = this.chordtypes.chordTypes[i][0];
 			option.innerHTML = this.chordtypes.chordTypes[i][0]+(this.chordtypes.chordTypes[i][1]==''?'':' ('+this.chordtypes.chordTypes[i][1]+')');
 			//+' &#160; &#160; e.g. ['+this.chordtypes.chordTypes[i][2]+']';
@@ -178,15 +174,15 @@ class Diagrams {
 	}
 
 	addColorTable(parent) {
-		let div = document.createElement('div');
-		let p = document.createElement('p');
+		var div = document.createElement('div');
+		var p = document.createElement('p');
 		p.innerHTML = 'Colors used are :';
 		parent.append(p);
-		let table = document.createElement('table');
+		var table = document.createElement('table');
 		
-		let tr = document.createElement('tr');
-		for (let c=0; c<this.colors.length; c++) {
-			let td = document.createElement('td');
+		var tr = document.createElement('tr');
+		for (var c=0; c<this.colors.length; c++) {
+			var td = document.createElement('td');
 			td.style['background-color'] = this.colors[c];
 			td.innerHTML = this.adaptContent(this.rnotes[c]);
 			tr.append(td);
@@ -194,8 +190,8 @@ class Diagrams {
 		table.append(tr);
 		
 		tr = document.createElement('tr');
-		for (let c=0; c<this.colors.length; c++) {
-			let td = document.createElement('td');
+		for (var c=0; c<this.colors.length; c++) {
+			var td = document.createElement('td');
 			td.style['background-color'] = this.colors[c];
 			if (c+12<this.rnotes.length) td.innerHTML = this.adaptContent(this.rnotes[c+12]);
 			tr.append(td);
@@ -203,8 +199,8 @@ class Diagrams {
 		table.append(tr);
 
 		tr = document.createElement('tr');
-		for (let c=0; c<this.colors.length; c++) {
-			let td = document.createElement('td');
+		for (var c=0; c<this.colors.length; c++) {
+			var td = document.createElement('td');
 			td.style['background-color'] = this.colors[c];
 			td.innerHTML =this.adaptContent(this.cnotes[c]);
 			tr.append(td);
@@ -212,8 +208,8 @@ class Diagrams {
 		table.append(tr);
 
 		tr = document.createElement('tr');
-		for (let c=0; c<this.colors.length; c++) {
-			let td = document.createElement('td');
+		for (var c=0; c<this.colors.length; c++) {
+			var td = document.createElement('td');
 			td.style['background-color'] = this.colors[c];
 			td.innerHTML = ' '+this.colors[c];
 			tr.append(td);
@@ -232,18 +228,18 @@ class Diagrams {
 
 	setStringChordNotes() {
 		//console.log('chords setStringChordNotes '+JSON.stringify(this.instruments.stringNotes));
-		let noteNames = 'CDEFGAB';
-		let octave_transpose = Math.floor(this.instruments.instrumentList[this.instruments.instrumentIndex].transpose/12);
-		for (let c=0; c<this.chordtypes.chordPitches.length; c++) {
-			for (let i=0; i<this.instruments.instrumentList[this.instruments.instrumentIndex].strings.length; i++) {
-				let octave = parseInt(this.instruments.instrumentList[this.instruments.instrumentIndex].strings[i].substr(1,1))+octave_transpose;
-				let stringChordNoteIndex = noteNames.indexOf(this.instruments.instrumentList[this.instruments.instrumentIndex].strings[i].substr(0,1));
+		var noteNames = 'CDEFGAB';
+		var octave_transpose = Math.floor(this.instruments.instrumentList[this.instruments.instrumentIndex].transpose/12);
+		for (var c=0; c<this.chordtypes.chordPitches.length; c++) {
+			for (var i=0; i<this.instruments.instrumentList[this.instruments.instrumentIndex].strings.length; i++) {
+				var octave = parseInt(this.instruments.instrumentList[this.instruments.instrumentIndex].strings[i].substr(1,1))+octave_transpose;
+				var stringChordNoteIndex = noteNames.indexOf(this.instruments.instrumentList[this.instruments.instrumentIndex].strings[i].substr(0,1));
 				//console.log('octave '+octave);
 				if (noteNames.indexOf(this.chordtypes.chordNotes[c].substr(0,1))<stringChordNoteIndex) octave++;
 				//console.log('octave '+octave+' stringChordNoteIndex '+stringChordNoteIndex+' '+noteNames.indexOf(this.chordtypes.chordNotes[c].substr(0,1)) );
-				let stringPosition = (12+this.chordtypes.chordPitches[c]-this.chordtypes.notenames.tpc2pitch(this.instruments.stringTpcs[i]))%12;
-				let spn = this.chordtypes.chordPitches[c]+octave*12 ;
-				let color = this.colors[(12+this.chordtypes.chordPitches[c]-this.chordtypes.chordPitches[0])%12];
+				var stringPosition = (12+this.chordtypes.chordPitches[c]-this.chordtypes.notenames.tpc2pitch(this.instruments.stringTpcs[i]))%12;
+				var spn = this.chordtypes.chordPitches[c]+octave*12 ;
+				var color = this.colors[(12+this.chordtypes.chordPitches[c]-this.chordtypes.chordPitches[0])%12];
 				this.stringNotes.push({string: i, string_pos: stringPosition, octave: octave, tpc: this.chordtypes.chordTpcs[c], pitch: this.chordtypes.chordPitches[c], note: this.chordtypes.chordNotes[c], spn: spn, color: color });
 				const duplicate = this.allNotes.some(entry => entry.spn === spn);
 				if (!duplicate) this.allNotes.push({string: i, string_pos: stringPosition, spn: spn, note: this.chordtypes.chordNotes[c], octave: octave, color: color });
@@ -289,20 +285,20 @@ class Diagrams {
 
 	updateChordInfo() {
 		this.chordinfo.firstChild.remove();
-		let p = document.createElement('p');
+		var p = document.createElement('p');
 		// 'Instrument '+this.instruments.instrumentList[this.instruments.instrumentIndex].instrument+' 
-		let t = document.createTextNode('Chord: '+this.chordtypes.getShortChordName()+' ');
+		var t = document.createTextNode('Chord: '+this.chordtypes.getShortChordName()+' ');
 		p.append(t);
-		for (let c=0; c<this.chordtypes.chordNotes.length; c++) {
-			let s = document.createElement('span');
+		for (var c=0; c<this.chordtypes.chordNotes.length; c++) {
+			var s = document.createElement('span');
 			s.style['background-color'] = this.colors[(12+this.chordtypes.chordPitches[c]-this.chordtypes.chordPitches[0])%12];
 			s.innerHTML = this.chordtypes.chordNotes[c].replace('b','♭').replace('#','♯');
 			p.append(s);
 			t = document.createTextNode(' ');
 			p.append(t);
 		}
-		let s = ' (';
-		for (let c=0; c<this.chordtypes.chordRelativeNotes.length; c++) {
+		var s = ' (';
+		for (var c=0; c<this.chordtypes.chordRelativeNotes.length; c++) {
 			s+= this.chordtypes.chordRelativeNotes[c]+' ';
 		}
 		s += ')';
@@ -312,7 +308,7 @@ class Diagrams {
 	}
 
 	removeDiagrams() {
-		let elements = document.getElementsByClassName('diagram');
+		var elements = document.getElementsByClassName('diagram');
 		while(elements.length > 0) {
 			elements[0].parentNode.removeChild(elements[0]);
 		}
@@ -378,7 +374,7 @@ class Diagrams {
 		if (fret) {
 			// 'fret '+fret.toString()
 			canvas_context.font = h+"px Arial";
-			canvas_context.fillText(r_p[fret],(s+1)*h,3/2*h);
+			canvas_context.fillText(r_p[fret-1],(s+1)*h,3/2*h);
 		}
 		div.append(canvas);
 		diagram_parent.append(div);

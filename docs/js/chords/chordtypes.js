@@ -85,7 +85,7 @@ class ChordTypes {
 			this.chordPitches[n] = this.notenames.tpc2pitch(this.chordTpcs[n]);
 		}
 		this.chordRelativeNotes = this.allChordRelativeNotes[this.chordType];
-		console.log('setChord '+JSON.stringify(this.chordNotes)+' '+JSON.stringify(this.chordTpcs)+' '+JSON.stringify(this.chordPitches)+' '+JSON.stringify(this.chordRelativeNotes));
+		// console.log('setChord '+JSON.stringify(this.chordNotes)+' '+JSON.stringify(this.chordTpcs)+' '+JSON.stringify(this.chordPitches)+' '+JSON.stringify(this.chordRelativeNotes));
 	}
 		
 	setBaseNoteTpc(b) {
@@ -98,10 +98,10 @@ class ChordTypes {
 	}
 
 	setChordType(ct) {
-		console.log('setChordType '+this.chordType+'->'+ct);
+		//console.log('setChordType '+this.chordType+'->'+ct);
 		this.chordType = ct;
 		this.setChord();
-		console.log('setChord '+this.chordType+'->'+ct);
+		//console.log('setChord '+this.chordType+'->'+ct);
 	}
 	
 	getChordName() {
