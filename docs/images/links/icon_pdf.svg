@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="302.349"
+   height="348.65701"
+   viewBox="0 0 302.349 348.65702"
+   enable-background="new 0 0 334.371 380.563"
+   xml:space="preserve"
+   id="svg49"
+   sodipodi:docname="icon_pdf.svg"
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"><metadata
+   id="metadata55"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs53" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1212"
+   inkscape:window-height="800"
+   id="namedview51"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="1.0904897"
+   inkscape:cx="151.1415"
+   inkscape:cy="174.29149"
+   inkscape:window-x="0"
+   inkscape:window-y="23"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg49" />
+<g
+   id="icon_PDF_file"
+   transform="translate(-16.044,-15.99)">
+	<g
+   id="contour_1">
+		<polygon
+   fill="#ffffff"
+   points="204.497,23.99 282.646,102.066 282.646,356.646 51.791,356.646 51.791,23.99 "
+   id="polygon24" />
+		<path
+   fill="#555555"
+   d="m 201.186,31.99 73.46,73.393 V 348.647 H 59.791 V 31.99 h 141.395 m 6.623,-16 H 43.791 V 364.647 H 290.645 V 98.75 Z"
+   id="path26" />
+	</g>
+	<g
+   id="contour_2">
+		<polygon
+   fill="#ffffff"
+   points="204.497,23.99 206.309,25.8 206.309,100.327 280.904,100.327 282.646,102.066 282.646,356.646 51.791,356.646 51.791,23.99 "
+   id="polygon29" />
+		<path
+   fill="#555555"
+   d="m 198.309,31.99 v 60.337 16 h 16 60.337 v 240.32 H 59.791 V 31.99 h 138.518 m 9.5,-16 H 43.791 V 364.647 H 290.645 V 98.75 l -6.43,-6.424 H 214.308 V 22.484 Z"
+   id="path31" />
+	</g>
+	<g
+   id="triangle">
+		<polygon
+   fill="#555555"
+   points="258.309,86.38 258.309,87.75 219.643,87.75 219.643,48.667 "
+   id="polygon34" />
+		<path
+   fill="#555555"
+   d="m 227.643,67.646 12.41,12.104 h -12.41 V 67.646 M 222.641,40.417 H 211.643 V 95.75 h 54.666 V 83.008 Z"
+   id="path36" />
+	</g>
+	<g
+   id="red_square">
+		<polygon
+   fill="#555555"
+   points="37.291,152.935 37.291,171.489 297.146,171.489 297.146,152.935 311.893,167.682 311.893,284.49 22.544,284.49 22.544,167.682 "
+   id="polygon39" />
+		<path
+   fill="#555555"
+   d="m 303.646,168.627 1.747,1.747 V 277.99 H 29.044 V 170.374 l 1.747,-1.747 v 9.362 h 13 246.854 13 v -9.362 m -12.999,-31.385 v 27.747 H 43.791 V 137.242 L 16.044,164.989 V 290.99 H 318.393 V 164.989 Z"
+   id="path41" />
+	</g>
+	<rect
+   x="52.096001"
+   y="189.32401"
+   fill="none"
+   width="232.826"
+   height="87.834"
+   id="rect44" />
+	<text
+   transform="translate(52.0957,271.6621)"
+   fill="#ffffff"
+   font-family="Arial-BoldMT"
+   font-size="115px"
+   id="text46">PDF</text>
+</g>
+</svg>

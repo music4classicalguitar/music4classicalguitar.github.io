@@ -1,0 +1,10 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Francisco Tárrega",
+	"scores": [
+		{ "name": "Francisco Tárrega - Adelita - tab", "pages": 1 },
+		{ "name": "Francisco Tárrega - Lágrima - tab", "pages": 1 },
+		{ "name": "Francisco Tárrega - Recuerdos de la Alhambra - tab", "pages": 6 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 8
+}

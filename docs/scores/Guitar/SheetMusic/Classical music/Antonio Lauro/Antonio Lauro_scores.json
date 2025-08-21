@@ -1,0 +1,13 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Antonio Lauro",
+	"scores": [
+		{ "name": "Antonio Lauro - Angostura", "pages": 2 },
+		{ "name": "Antonio Lauro - Carora", "pages": 2 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 1 Tatania", "pages": 1 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 2 Andreina", "pages": 1 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 3 Natalia", "pages": 2 },
+		{ "name": "Antonio Lauro - Cuatro valses venozolanos - No. 4 Yacambu", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 10
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/turn/jquery.min.1.7.js"></script>
+		<script src="js/turn/modernizr.2.5.3.min.js"></script>
+		<script src="js/score_viewer/score_viewer.js"></script>
+		<title>Score viewer</title>
+	</head>
+	<body>
+		<header>
+			<span><a href="index.html"><img src="images/home.svg"></a></span>&#160; &#160; &#160; <h1 class='title'>Score viewer</h1>
+			<p>You can navigate through the score 	by clicking the left/right upper/lower corners or by using the keys ← and →.</p>
+		</header>
+		<article>
+			<div  id="score_viewer" class="score_viewer"></div>
+			<div id="slider_bar">
+				<input id="turnjs_slider" type="range" min="1" max="100" value="1" class="slider" style="width:80%" onchange="slider_change()">
+			</div>
+		</article>
+	</body>
+</html>

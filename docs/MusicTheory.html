@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Music theory</title>
+	</head>
+	<body>
+		<header>
+			<span><a href="index.html"><img src="images/home.svg" alt="home"></a></span> &#160; &#160; &#160; <h1 class='title'>Music theory</h1>
+		</header>
+		<article>
+		
+		<h2>Table of contents</h2>
+		<ul>
+			<li><a href="#Notes">Notes</a> 
+			(<img src="images/musictheory/note_semibreve.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semibreve">
+			<img src="images/musictheory/note_minim.png" style="vertical-align: middle; height: 21px; width: auto;" alt="minim">
+			<img src="images/musictheory/note_crotchet.png" style="vertical-align: middle; height: 21px; width: auto;" alt="crotchet">
+			<img src="images/musictheory/note_quaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="quaver">
+			<img src="images/musictheory/note_semiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semiquaver">
+			<img src="images/musictheory/note_demisemiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="demisemiquaver">
+			<img src="images/musictheory/note_semidemisemiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semidemisemiquaver">)</li>
+			<li><a href="#Staves">Staves</a> 
+			(<img src="images/musictheory/notesystem_en.png" style="vertical-align: middle; height: 30px; width: auto;" alt="note system">)</li>
+			<li><a href="#Ledger_lines">Ledger lines</a>
+			(<img src="images/musictheory/notes_leger_lines.png" style="vertical-align: middle; height: 42px; width: auto;" alt="leger lines">)</li>
+			<li><a href="#Clefs">Clefs</a>
+			(<img src="images/musictheory/clef_G.png" style="vertical-align: middle; width:8px; height:auto" alt="G or violin clef">
+			<img src="images/musictheory/clef_C.png" style="vertical-align: middle; width:10px; height:auto" alt="C clef">
+			<img src="images/musictheory/clef_F.png" style="vertical-align: middle; width:10px; height:auto" alt="bass or F clef">
+			)</li>
+			<li><a href="#Value_of_notes">Value of notes</a>
+			(duration of <img src="images/musictheory/note_semibreve.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semibreve">
+			<img src="images/musictheory/note_minim.png" style="vertical-align: middle; height: 21px; width: auto;" alt="minim">
+			<img src="images/musictheory/note_crotchet.png" style="vertical-align: middle; height: 21px; width: auto;" alt="crotchet">
+			<img src="images/musictheory/note_quaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="quaver">
+			<img src="images/musictheory/note_semiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semiquaver">
+			<img src="images/musictheory/note_demisemiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="demisemiquaver">
+			<img src="images/musictheory/note_semidemisemiquaver.png" style="vertical-align: middle; height: 21px; width: auto;" alt="semidemisemiquaver">)</li>
+			<li><a href="#Tuplets">Tuplets</a>
+			(<img src="images/musictheory/notes_triplet.png" style="vertical-align: middle; height: 30px; width: auto;" alt="triplet">
+			<img src="images/musictheory/notes_sextolet.png" style="vertical-align: middle; height: 28px; width: auto;" alt="sextolet">
+			)</li>
+			<li><a href="#Rests">Rests</a> 
+			(<img src="images/musictheory/rest_semibreve.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest semibreve">
+			<img src="images/musictheory/rest_minim.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest minim">
+			<img src="images/musictheory/rest_crotchet.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest crotchet">
+			<img src="images/musictheory/rest_quaver.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest quaver">
+			<img src="images/musictheory/rest_semiquaver.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest semiquaver">
+			<img src="images/musictheory/rest_demisemiquaver.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest demisemiquaver">
+			<img src="images/musictheory/rest_semidemisemiquaver.png" style="vertical-align: middle; height: 23px; width: auto;" alt="duration rest semidemisemiquaver">
+			)</li>
+			<li><a href="#Ties">Ties</a> (
+			<img src="images/musictheory/tie.png" style="vertical-align: middle;" alt="tie">
+			)</li>
+			<li><a href="#Dots">Dots</a> 
+			(<img src="images/musictheory/dot_semibreve.png" style="vertical-align: middle; height: 30px; width: auto;" alt="semibreve with dot">
+			<img src="images/musictheory/dot_minim.png" style="vertical-align: middle; height: 30px; width: auto;" alt="minim with dot">
+			<img src="images/musictheory/dot_crotchet.png" style="vertical-align: middle; height: 30px; width: auto;" alt="crotchet with dot">
+			<img src="images/musictheory/dot_rest_crotchet.png" style="vertical-align: middle; height: 30px; width: auto;" alt="rest crotchet with dot">
+			<img src="images/musictheory/dot_rest_quaver.png" style="vertical-align: middle; height: 30px; width: auto;" alt="rest quaver with dot">
+			)</li>
+			<li><a href="#Transpositions">Transpositions/Accidentals</a>
+			(<img src="images/musictheory/accidental_sharp.png" style="height: 15px; width: auto;" alt="accidental sharp">
+			<img src="images/musictheory/accidental_flat.png" style="height: 15px; width: auto;" alt="accidental flat">
+			<img src="images/musictheory/accidental_natural.png" style="height: 15px; width: auto;" alt="accidental natural">
+			<img src="images/musictheory/accidental_double_sharp.png" style="height: 15px; width: auto;" alt="accidental double sharp">
+			<img src="images/musictheory/accidental_double_flat.png" style="height: 15px; width: auto;" alt="accidental double flat">
+			)</li>
+			<li><a href="#Bars">Bars</a></li>
+			<li><a href="#Time_signature">Time signature</a>
+			(<img src="images/time/TimeCommon.png" style="vertical-align: middle; height: 30px; width: auto;" alt="Common time">
+			 <img src="images/time/TimeCutTime.png" style="vertical-align: middle; height: 30px; width: auto;" alt="Cut time">
+			 <img src="images/time/Time_3_2.png" style="vertical-align: middle; height: 30px; width: auto;" alt="3/2 time">
+			 <img src="images/time/Time_4_4.png" style="vertical-align: middle; height: 30px; width: auto;" alt="4/4 time">
+			 <img src="images/time/Time_6_8.png" style="vertical-align: middle; height: 30px; width: auto;" alt="6/8 time">
+			)</li>
+			<li><a href="#Tempo">Tempo</a></li>
+			<li><a href="#Dynamics">Dynamics</a>
+			(<img src="images/musictheory/dynamics.png" style="height: 15px; width: auto;" alt="dynamics">
+			)</li>
+			<li><a href="#Scales">Scales/modes</a> (
+			<img src="images/musictheory/modes_none.png" style="vertical-align: middle; height: 30px; width: auto;" alt="modes none">
+			<img src="images/musictheory/modes_sharps.png" style="vertical-align: middle; height: 30px; width: auto;" alt="modes sharps">
+			<img src="images/musictheory/modes_flats.png" style="vertical-align: middle; height: 30px; width: auto;" alt="modes flats">		
+			)</li>
+			<li><a href="#LH_fingering">Left hand fingering</a> (1, 2, 3, 4)</li>
+			<li><a href="#RH_fingering">Right hand fingering</a> (p, i, m, a)</li>
+			<li><a href="#String_indication">String indication</a> (<img src="images/musictheory/string_indication.png" alt="guitar string indication">)</li>
+			<li><a href="#LH_position">Left hand position</a> (I, II, II, IV, ...)</li>
+			<li><a href="#IPN">International pitch notation</a></li>
+			<li><a href="#Tuning">Tuning</a></li>
+		</ul>
+
+		<h2>Elements of music notation for guitar</h2>
+<h3 id="Notes">Notes</h3>
+<p>
+The signs for the tones in music are called notes.
+There are seven of them, named <i>c, d, e, f, g, a, b</i>.
+If a passage embraces eigth, nine or more such notes in succession, these names are repeated in the same order.
+In descending their order is reversed, namely: <i>b, a, g, f, e, d, c</i>.
+</p>
+<p>A note indicates both its pitch and its duration (how long it lasts).
+<br>Each note consists of a notehead (either open or filled) and may also have a stem and a beam or flag.
+<br><img src="images/musictheory/note_parts.png" alt="note parts"></p>
+<p>The notes stand partly on and partly between five horizontal, parallel lines, called the stave;
+the lines and spaces are reckoned upwards.
+</p>
+
+<h3 id="Staves">Staves</h3>
+<p>
+<img src="images/musictheory/notesystem_en.png" alt="note system">
+</p>
+<h3 id="Ledger_lines">Ledger lines</h3>
+<p>If notes go so high or so low that there is not room for them on this stave, use is made of little ledger line or leger lines, on which, or between which, these notes are put.
+<br>
+<img src="images/musictheory/notes_leger_lines.png" alt="leger lines">
+</p>
+
+<h3 id="Clefs">Clefs</h3>
+<p>
+In order to decide the names of the notes, and to be able to distinguish for what voice a piece of music is intended, we emply three kinds of signs or clefs: the G or violin clef <img src="images/musictheory/clef_G.png" style="vertical-align: middle;" alt="G or violin clef">, the C clef <img src="images/musictheory/clef_C.png" style="vertical-align: middle;" alt="C clef">, and the bass or F clef <img src="images/musictheory/clef_F.png" style="vertical-align: middle;" alt="bass or F clef">.
+<br>These clefs are placed on different lines, and the notes on those lines are named accordingly.
+</p>
+<p>
+For the guitar, however, only the G clef is used; it stands on the second line of the stave, and accordingly the notes for the guitar are :
+<br>
+<img src="images/musictheory/notenames_en.png" alt="note names">
+<br>
+The easiest way of remembering the notes is first to take the notes on the lines
+<br>
+<img src="images/musictheory/notes_on_lines_en.png" alt="notes on lines">
+<br>
+then those in the spaces
+<br>
+<img src="images/musictheory/notes_between_lines_en.png" alt="notes between lines">
+<br>
+then those below the stave
+<br>
+<img src="images/musictheory/notes_below_lines_en.png" alt="notes below lines">
+<br>
+and finally those above the stave.
+<br>
+<img src="images/musictheory/notes_above_lines_en.png" alt="notes above lines">
+</p>
+
+<h3 id="Value_of_notes">Value of notes</h3>
+
+<p>
+In music use is made chiefly of seven kinds of notes, the value or duration of which is signified by their different forms.
+They are :
+</p>
+
+<table class="vertical_border">
+	<tr>
+		<td>&#160; Semibreve &#160;</td>
+		<td>&#160; Minim &#160;</td>
+		<td>&#160; Crotchet &#160;</td>
+		<td>&#160; Quaver &#160;</td>
+		<td>&#160; Semiquaver &#160;</td>
+		<td>&#160; Demisemiquaver &#160;</td>
+		<td>&#160; Semidemisemiquaver &#160;</td>
+	</tr>
+	<tr>
+		<td><img src="images/musictheory/note_semibreve.png" alt="semibreve"></td>
+		<td><img src="images/musictheory/note_minim.png" alt="minim"></td>
+		<td><img src="images/musictheory/note_crotchet.png" alt="crotchet"></td>
+		<td><img src="images/musictheory/note_quaver.png" alt="quaver"></td>
+		<td><img src="images/musictheory/note_semiquaver.png" alt="semiquaver"></td>
+		<td ><img src="images/musictheory/note_demisemiquaver.png" alt="demisemiquaver"></td>
+		<td><img src="images/musictheory/note_semidemisemiquaver.png" alt="semidemisemiquaver"></td>
+	</tr>
+</table>
+
+<p>
+The relative values of these notes are:
+</p>
+<table class="no_border">
+	<tr><td>1 semibreve</td><td style="text-align: left;"><img src="images/musictheory/note_duration_semibreve.png" alt="duration semibreve"></td></tr>
+	<tr><td>is equal to</td><td></td></tr>
+	<tr><td>2 minims</td><td style="text-align: left;"><img src="images/musictheory/note_duration_minim.png" alt="duration minim"></td></tr>
+	<tr><td>4 crotchets</td><td style="text-align: left;"><img src="images/musictheory/note_duration_crotchet.png" alt="duration crotchet"></td></tr>
+	<tr><td>8 quavers</td><td style="text-align: left;"><img src="images/musictheory/note_duration_quaver.png" alt="duration quaver"></td></tr>
+	<tr><td>16 semiquavers</td><td style="text-align: left;"><img src="images/musictheory/note_duration_semiquaver.png" alt="duration semiquaver"></td></tr>
+	<tr><td>32 demisemiquavers</td><td style="text-align: left;"><img src="images/musictheory/note_duration_demisemiquaver.png" alt="duration demisemiquaver"></td></tr>
+</table>
+
+<h3 id="Tuplets">Tuplets</h3>
+<p>There are further groups of three and six notes each, and they have a figure 3 or 6 above them, and are called triplets, or sextolets.
+<br>
+Triplets <img src="images/musictheory/notes_triplet.png" style="vertical-align: middle;" alt="triplet"> take up the time of 2 notes of their own kind <img src="images/musictheory/notes_duplet.png" style="vertical-align: middle;" alt="duplet">;
+<br>
+while sextolets <img src="images/musictheory/notes_sextolet.png" style="vertical-align: middle;" alt="sextolet"> take up the time of four of their kind <img src="images/musictheory/notes_quadruplet.png" style="vertical-align: middle;" alt="quadruplet">.
+</p>
+
+<h3 id="Rests">Rests</h3>
+<p>There are likewise seven kinds of rests in common use, and like notes their value is indicated by their form.
+</p>
+
+<table class="no_border">
+	<tr>
+		<td><img src="images/musictheory/rest_semibreve.png" alt="duration rest semibreve"></td>
+		<td><img src="images/musictheory/rest_minim.png" alt="duration rest minim"></td>
+		<td><img src="images/musictheory/rest_crotchet.png" alt="duration rest crotchet"></td>
+		<td><img src="images/musictheory/rest_quaver.png" alt="duration rest quaver"></td>
+		<td><img src="images/musictheory/rest_semiquaver.png" alt="duration rest semiquaver"></td>
+		<td><img src="images/musictheory/rest_demisemiquaver.png" alt="duration rest demisemiquaver"></td>
+		<td><img src="images/musictheory/rest_semidemisemiquaver.png" alt="duration rest semidemisemiquaver"></td>
+	</tr>
+	<tr>
+		<td>Semibreve rest</td>
+		<td>Minim rest</td>
+		<td>Crotchet rest</td>
+		<td>Quaver rest</td>
+		<td>Semiquaver rest</td>
+		<td>Demisemiquaver rest</td>
+		<td>Semidemisemiquaver rest</td>
+	</tr>
+</table>
+
+<p>There are rests of 2 and 4 bars each, thus <img src="images/musictheory/rest_2_4_measures.png" alt="rests of 2 and 4 bars">
+</p>
+
+<h3 id="Ties">Ties</h3>
+
+<p>In music notation, a tie is a curved line <img src="images/musictheory/tie.png" alt="tie">, connecting the heads of two notes of the same pitch, indicating that they are to be played as a single note with a duration equal to the sum of the individual notes' values.</p>
+
+<h3 id="Dots">Dots</h3>
+
+<p>A dot after a note or rest increases its length by half.
+<br>Consequently a semibreve and a dot <img src="images/musictheory/dot_semibreve.png" style="vertical-align: middle;" alt="dot semibreve"> are worth <img src="images/musictheory/dot_semibreve_minim.png" style="vertical-align: middle;" alt="semibreve and minim"> that is three minims;
+<br>a dotted minim <img src="images/musictheory/dot_minim.png" style="vertical-align: middle;" alt="dot minim"> is worth three crotchets <img src="images/musictheory/dot_minim_crotchet.png" style="vertical-align: middle;" alt="minim and crotchet">
+<br>a dotted crotchet <img src="images/musictheory/dot_crotchet.png" style="vertical-align: middle;" alt="dot crotchet"> is worth three quavers <img src="images/musictheory/dot_crotchet_quaver.png" style="vertical-align: middle;" alt="crotchet and quaver">
+<br>etc.
+<br>The relation is the same for rests, so <img src="images/musictheory/dot_rest_crotchet.png" style="vertical-align: middle;" alt="dot rest crotchet"> is equal to <img src="images/musictheory/dot_rest_crotchet_quaver.png" style="vertical-align: middle;" alt="rest crotchet and quaver">
+<br>and <img src="images/musictheory/dot_rest_quaver.png" style="vertical-align: middle;" alt="dot rest quaver"> is equal to <img src="images/musictheory/dot_rest_quaver_semiquaver.png" style="vertical-align: middle;" alt="rest quaver and semiquaver">
+</p>
+<p>A second (, third, fourth, ...) dot after a note or rest with a dot increases its length by an additional quarter (, eight, sixteenth, ...) of the note's duration.</p>
+
+<h3 id="Transpositions">Transpositions/Accidentals</h3>
+
+<p>There are three signs of transposition, namely the sharp (<img src="images/musictheory/accidental_sharp.png" alt="sharp">), the flat (<img src="images/musictheory/accidental_flat.png" alt="flat">) and
+the natural (<img src="images/musictheory/accidental_natural.png" alt="natural">).
+<br>
+The sharp will raises the note before which it stands a semitone,
+where as the flat (<img src="images/musictheory/accidental_flat.png" alt="flat">) lowers the note before which it is placed a semitone,
+while the natural (<img src="images/musictheory/accidental_natural.png" alt="natural">) restores it to its original pitch from which it had been removed by the sharp or flat.
+<br>
+If a sharp or flat is be placed at the beginning of a piece next to the clef, it is called essential, and alters all the notes on that line or in that space
+throughout the whole piece.
+But if a sharp or flat occur in the course of a piece before a note, it is called an accidental and it holds good only for the bar in which it occurs.
+<br>
+There are also double sharps (<img src="images/musictheory/accidental_double_sharp.png" alt="double sharp">) which raise an already sharpened note another semitone, or if it be not already
+sharpened, the double sharp raises it a whole tone; the double flat (<img src="images/musictheory/accidental_double_flat.png" alt="double flat">) lowers the note it precedes a semitone if
+it be already lowered one; or if not, then a whole tone.</p>
+
+<p>If a sharp or flat is placed at the beginning of a piece next to the clef, it is called essential and alters all the notes on that line (and all equivalent notes one or more octaves higher or lower) or in that space throughout the whole piece.
+</p>
+
+<h3 id="Bars">Bars</h3>
+
+<p>Music is divide into bars (each having the same relative duration), which are separated from each other by perpendicular lines across the staves (also these lines are called bars or barlines)</p>
+
+<h3 id="Time_signature">Time signature</h3>
+
+<p>The (relative) duration of a bar is indicated by a time signature.
+<br>A time signature is placed after the clef and (key) signature (see <a href="#Scales">Scales</a>).
+<br>Simple common time has either four crotchets in a bar and is marked <img src="images/time/TimeCommon.png" style="vertical-align: middle;" alt="Common time"> or else two minims, which latter is called Alla breve time and is marked in the signature by <img src="images/time/TimeCutTime.png" style="vertical-align: middle;" alt="Cut time"> or <img src="images/time/TimeCommon2.png" style="vertical-align: middle;" alt="Cut time">.
+<br>Another way is to indicate the number and duration of notes by two numbers above each other. The lower digit indicates the note duration (semibreve, minim, crotchet a.s.o.), the upper number indicates the number of notes in a bar, like:
+</p>
+<ul>
+	<li><img src="images/time/Time_3_2.png" style="vertical-align: middle;" alt="3/2 time">: 3 minims</li>
+	<li><img src="images/time/Time_4_4.png" style="vertical-align: middle;" alt="4/4 time">: 4 crotchets</li>
+	<li><img src="images/time/Time_6_8.png" style="vertical-align: middle;" alt="6/8 time">: 6 semiquavers</li>
+</ul>
+
+<h3 id="Tempo">Tempo</h3>
+
+<p>Tempo is the speed at which a piece is played. Mostly tempo is indicated at the start of a piece.
+One way is to specify the beats per minute (or bpm).
+<br>Another way is by use of common markings.
+The beats per minute (bpm) values are very rough approximations and vary widely according to composers and works.
+The exact sense of many of these terms has changed over time.</p>
+
+<table>
+	<tr><th>Marking</th><th>Description</th><th>BPM</th></tr>
+	<tr><td>Larghissimo</td><td>extremely slow</td><td>24 or less</td></tr>
+	<tr><td>Adagissimo</td><td>very slow</td><td>24-40</td></tr>
+	<tr><td>Grave</td><td>very slow and solemn</td><td>24–40</td></tr>
+	<tr><td>Largo</td><td>slow and broad</td><td>40–66</td></tr>
+	<tr><td>Larghetto</td><td>rather slow and broad</td><td>44–66</td></tr>
+	<tr><td>Adagio</td><td>slow with great expression</td><td>44–68</td></tr>
+	<tr><td>Adagietto</td><td>slower than andante or slightly faster than adagi</td><td>46–80</td></tr>
+	<tr><td>Lento</td><td>slow</td><td>52–108</td></tr>
+	<tr><td>Andante</td><td>at a walking pace, moderately slow</td><td>56–108</td></tr>
+	<tr><td>Marcia moderato</td><td>moderately, in the manner of a march</td><td>66–80</td></tr>
+	<tr><td>Andante moderato</td><td>between andante and moderato</td><td>66–112</td></tr>
+	<tr><td>Allegretto</td><td>by the mid-19th century, moderately fast</td><td>76–120</td></tr>
+	<tr><td>Andantino</td><td>slightly faster than andante, but slower than moderato</td><td>80–108</td></tr> 
+	<tr><td>Moderato</td><td>at a moderate speed</td><td>86–126</td></tr>
+	<tr><td>Allegro moderato</td><td>close to, but not quite allegro</td><td>96–120</td></tr>
+	<tr><td>Allegro</td><td>fast and bright</td><td>100–156</td></tr>
+	<tr><td>Molto Allegro</td><td>very fast and bright</td><td>124–160</td></tr>
+	<tr><td>Allegro vivace</td><td>very fast and bright</td><td>124–160</td></tr>
+	<tr><td>Vivace</td><td>lively and fast</td><td>136–160</td></tr>
+	<tr><td>Vivacissimo</td><td>very fast and lively</td><td>160–184</td></tr>
+	<tr><td>Allegrissim</td><td>very fast and bright</td><td>160–184</td></tr>
+	<tr><td>Presto</td><td>very fast</td><td>168–200</td></tr>
+	<tr><td>Prestissimo</td><td>extremely fast</td><td>200 or more</td></tr>
+</table>
+
+
+<h3 id="Dynamics">Dynamics</h3>
+
+<p>Dynamic markings of a piece specify the variation in loudness between notes or phrases.
+<br>Dynamic markings are always relative and never indicate a precise level of loudness.
+<br><img src="images/musictheory/dynamics_text.png" alt="dynamics text">
+<br><img src="images/musictheory/dynamics.png" alt="dynamics">
+</p>
+<p><b>Scale of dynamic markings</b></p>
+<table>
+	<tr><th>Name</th><th>Letters</th><th>Level</th></tr>
+	<tr><td>pianississimo</td><td>ppp</td><td>very very quiet</td></tr>
+	<tr><td>pianissimo</td><td>pp</td><td>very quiet</td></tr>
+	<tr><td>piano</td><td>p</td><td>quiet</td></tr>
+	<tr><td>mezzo-piano</td><td>mp</td><td>moderately quiet</td></tr>
+	<tr><td>mezzo-forte</td><td>mf</td><td>moderately loud</td></tr>
+	<tr><td>forte</td><td>f</td><td>loud</td></tr>
+	<tr><td>fortissimo</td><td>ff</td><td>very loud</td></tr>
+	<tr><td>fortississimo</td><td>fff</td><td>very very loud</td></tr>
+</table>
+
+<p>Three Italian words are used to show gradual changes in volume:</p>
+<ul>
+	<li>crescendo (abbreviated cresc.) translates as "increasing" (literally "growing")</li>
+	<li>decrescendo (abbreviated to decresc.) translates as "decreasing"</li>
+	<li>diminuendo (abbreviated dim.) translates as "diminishing"</li>
+</ul>
+<p>Signs sometimes referred to as "hairpins" are also used to stand for these words.
+<br><img src="images/musictheory/dynamics_hairpins.png" alt="hairpins">
+</p>
+
+<h3 id="Scales">Scales</h3>
+
+<p>A <a href="https://en.wikipedia.org/wiki/Scale_(music)">scale</a> is any set of musical notes ordered by <a href="https://en.wikipedia.org/wiki/Fundamental_frequency">fundamental frequency</a> or <a href="https://en.wikipedia.org/wiki/Pitch_(music)">pitch</a>.
+<br>The most common modern Western scales have 7 notes per octave.</p>
+
+<p>To alter a scale a key-signature is used to indicate which notes have to be changed.
+<br>In the key-signature at the beginning of a line (or measure if there are key-changes within the piece) one puts the sharps or flats up to seven in the following order:
+<br>f, c, g, d, a, e, b for sharps:
+<br><img src="images/musictheory/accidentals_sharps.png" alt="accidentals sharps">
+<br>b, e, a, d, g, c, f for flats:
+<br><img src="images/musictheory/accidentals_flats.png" alt="accidentals flats">
+</p>
+
+<p>A mode is a type of musical scale coupled with a set of characteristic melodic and harmonic behaviors.</p>
+<p>Most used modes nowadays are major and minor mode. Every major mode has it's relative minor mode and the latter is always a minor third lower than the former.</p>
+<p>The following twelve major and minor modes are in general use:
+<br>no sharps or flats:
+<br><img src="images/musictheory/modes_none.png" alt="modes none">
+<br>with sharps:
+<br><img src="images/musictheory/modes_sharps.png" alt="modes sharps">
+<br>with flats:
+<br><img src="images/musictheory/modes_flats.png" alt="modes flats">
+</p>
+
+<h3 id="LH_fingering">Left hand fingering</h3>
+
+<p>To play a note on guitar, a left-hand finger presses a string behind a fret (or none if playing an open string).
+<br>Left hand fingering indicates the finger used to press the string to get the desired note.
+</p>
+
+<table class="no_border">
+	<tr>
+	<td><img src="images/musictheory/left_hand_fingering.png" alt="left hand fingering"></td>
+	<td>
+	<table>
+		<tr><th>Symbol before note</th><th>Finger</th></tr>
+		<tr><td>0</td><td>no finger (open string)</td></tr>
+		<tr><td>1</td><td>index finger</td></tr>
+		<tr><td>2</td><td>middle finger</td></tr>
+		<tr><td>3</td><td>ring finger</td></tr>
+		<tr><td>4</td><td>pinky</td></tr>
+	</table>
+	</td>
+	</tr>
+</table>
+
+<p>Example (Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 1 Andante) :
+<br><img src="images/musictheory/left_hand_fingering_example.png" alt="left hand fingering example">
+</p>
+
+<h3 id="RH_fingering">Right hand fingering</h3>
+
+<p>Right hand fingering indicates which finger is used to create the sound.
+</p>
+
+<table class="no_border">
+	<tr><td><img src="images/musictheory/right_hand_fingering.png" alt="right hand fingering"></td>
+	<td>
+	<table>
+		<tr><th>Symbol above/below note</th><th>Finger</th></tr>
+		<tr><td>p</td><td>(pulgar) thumb</td></tr>
+		<tr><td>i</td><td>(indice) index finger</td></tr>
+		<tr><td>m</td><td>(medio) middle finger</td></tr>
+		<tr><td>a</td><td>(anular) ring finger</td></tr>
+	</table>
+	</td>
+	</tr>
+</table>
+
+<p>Example (Romance - Anonyme):
+<br><img src="images/musictheory/right_hand_fingering_example.png" alt="right hand fingering example">
+</p>
+
+<h3 id="String_indication">String indication</h3>
+
+<p>To indicate to play a note on a certain string a number inside a circle is used (normally above or below that note) :
+<br><img src="images/musictheory/string_indication.png" alt="guitar string indication">
+<br>The thinnest (highest sounding) string is indicates with 1, the thickest (lowest sounding) string with 6.</p>
+
+<p>Example (Francisco Tárrega - Adelita):
+<br><img src="images/musictheory/string_indication_example.png" alt="string indication">
+</p>
+
+<h3 id="LH_position">Left hand position</h3>
+
+<p>To indicate the left hand position on the neck Roman numerals are used, sometimes preceded by B or C (barre), or ½ B or ½ C (partial barre).</p>
+<p>The two abbreviations "B", "C", represent the terms barre or bar, cejillo or capotasto.
+<br>A barre is a technique by using one finger to press down multiple strings across a single fret.
+<br>A full barre presses all strings, a partial barre a part of all the strings.</p>
+<p>Roman numerals without the "B" or "C" indicates fingerboard position only, with
+<br>I: first fret, II: second fret, ...
+</p>
+
+<p>Example (Matteo Carcassi - Op. 60 Vingt cinq études mélodiques et progressives - No. 1 Allegro):
+<br><img src="images/musictheory/left_hand_position.png" alt="left hand position example">
+
+<h3 id="IPN">International pitch notation</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Scientific_pitch_notation">International pitch notation</a> concerns only how pitch names are notated, that is, how they are designated in printed and written text, and does not inherently specify actual frequencies.
+<br>Thus, the use of scientific pitch notation to distinguish octaves does not depend on the pitch standard used.
+<br>The notation makes use of the traditional tone names (A to G) which are followed by numbers showing which octave they are part of.
+<br>For standard A440 pitch equal temperament, the system begins at a frequency of 16.35160 Hz, which is assigned the value C0.
+</p>
+<p>
+<img src="images/musictheory/IPN_octaves_of_C.png" alt="notes above lines">
+<br>Ten Cs in scientific pitch notation
+<p>
+<img src="images/musictheory/IPN_octaves_piano.png" alt="notes above lines">
+<br>An 88-key piano, with the octaves numbered and Middle C (cyan) and A440 (yellow) highlighted.
+</p>
+
+
+<h3 id="Tuning">Tuning</h3>
+
+<p>The standard tuning for guitar is (from lowest to highest sounding string):
+<br> E2, A2, D3, G3, B3, E4
+<br>See the <a href="https://en.wikipedia.org/wiki/Scientific_pitch_notation#Table_of_note_frequencies">table of note frequencies</a>.</p>
+
+<p>Sound:
+<br><img src="images/musictheory/guitar_strings_notes_sound.png" alt="guitar strings sound">
+<br>Notation:
+<br><img src="images/musictheory/guitar_strings_notes_notation.png" alt="guitar strings notation">
+<br>The 8 below the clef is indicating that the sound is an octave lower than the notation indicates.
+<br>Often the 8 below the clef omitted in scores for guitar.
+</p>
+</article>
+</body>
+</html>

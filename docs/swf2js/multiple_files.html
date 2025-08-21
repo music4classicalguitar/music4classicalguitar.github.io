@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+		<script type="text/javascript" src="js/swf2js.min.js"></script>
+		<title>reversi1</title>
+	</head>
+	<body>
+					<div id="swf_0" style="position: relative; width: 100%; height: 200px"></div>
+					<p/>
+					<div style="position: relative; text-align: center;">
+						<button type="button" id="play_0">Play</button>
+						<button type="button" id="step_0">Step</button>
+						<button type="button" id="stop_0">Stop</button>
+						<button type="button" id="info_0">Info</button>
+					</div>
+					<p/>
+					<div id="swf_1" style="position: relative; width: 100%; height: 200px"></div>
+					<p/>
+					<div style="position: relative; text-align: center;">
+					  <button type="button" id="play_1">Play</button>
+					  <button type="button" id="step_1">Step</button>
+					  <button type="button" id="stop_1">Stop</button>
+					  <button type="button" id="info_1">Info</button>
+					</div>
+					<p/>
+					<div id="swf_2" style="position: relative; width: 100%; height: 200px"></div>
+					<p/>
+					<div style="position: relative; text-align: center;">
+					  <button type="button" id="play_2">Play</button>
+					  <button type="button" id="step_2">Step</button>
+					  <button type="button" id="stop_2">Stop</button>
+					  <button type="button" id="info_2">Info</button>
+					</div>
+		<script type="text/javascript">
+			//var swf2js = new Swf2js();
+			var swf_0 = swf2js.load("examples/analog20.swf", { "tagId": "swf_0", "autoStart": true });
+			document.getElementById('play_0').addEventListener('click', function (e) { swf_0.play(); });
+			document.getElementById('stop_0').addEventListener('click', function (e) { swf_0.stop(); });
+			document.getElementById('step_0').addEventListener('click', function (e) { swf_0.step(); });
+			document.getElementById('info_0').addEventListener('click', function (e) { swf_0.showInfo(); } );
+			window.addEventListener('resize', function() {
+				swf_0.resize();
+			});
+
+			var swf_1 = swf2js.load("examples/model.swf", { "tagId": "swf_1", "autoStart": true });
+			document.getElementById('play_1').addEventListener('click', function (e) { swf_1.play(); });
+			document.getElementById('stop_1').addEventListener('click', function (e) { swf_1.stop(); });
+			document.getElementById('step_1').addEventListener('click', function (e) { swf_1.step(); });
+			document.getElementById('info_1').addEventListener('click', function (e) { swf_1.showInfo(); } );
+			window.addEventListener('resize', function() {
+				swf_1.resize();
+			});
+			var swf_2 = swf2js.load("animatedmusic/mirli.swf", { "tagId": "swf_2", "autoStart": true });
+			document.getElementById('play_2').addEventListener('click', function (e) { swf_2.play(); });
+			document.getElementById('stop_2').addEventListener('click', function (e) { swf_2.stop(); });
+			document.getElementById('step_2').addEventListener('click', function (e) { swf_2.step(); });
+			document.getElementById('info_2').addEventListener('click', function (e) { swf_2.showInfo(); } );
+			window.addEventListener('resize', function() {
+				swf_2.resize();
+			});
+		</script>				
+	</body>
+</html>

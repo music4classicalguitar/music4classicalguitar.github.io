@@ -1,0 +1,6 @@
+tr:nth-child(even) {
+	background-color: #EEEEEE;
+}
+th.composer {
+	background-color: #DDDDDD;
+}

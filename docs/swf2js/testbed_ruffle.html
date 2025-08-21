@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>SWF testbed ruffle</title>
+	</head>
+	<body>
+		<h1 style="text-align:center">Testbed with ruffle for SWF-files</h1>
+		<p style="text-align:center">Using the automatically updating CDN release at <a href="https://unpkg.com/@ruffle-rs/ruffle">https://unpkg.com/@ruffle-rs/ruffle</a>
+			<br>See <a href="https://unpkg.com/browse/@ruffle-rs/ruffle/">https://unpkg.com/browse/@ruffle-rs/ruffle/</a></p>
+		<div>
+			<table class='center'>
+				<tr>
+					<td>
+						<label for="input">Choose an SWF-file</label><br>
+						<input type="file" id="input" accept=".swf"><br>
+						<div id="buttons" style="text-align: center;">
+							<button type="button" id="play">Play</button>
+							<button type="button" id="stop">Stop</button>
+							<button type="button" id="reload">Reload</button>
+							<button type="button" id="info">Info</button>
+						</div>
+					</td>
+					<td>
+						<table class='center'>
+							<tr>
+								<td><label for="quality">Quality</label></td>
+								<td><select name="quality" id="quality">
+										<option value="low">low</option>
+										<option value="medium"  selected>medium (default)</option>
+										<option value="high">high</option>
+								</select></td>
+							</tr>
+							<tr>
+								<td><label for="autoPlay">AutoPlay</label></td>
+								<td><select name="autoPlay" id="autoPlay">
+									<option value="on" selected>yes (default)</option>
+									<option value="off">no</option>
+								</select></td>
+							</tr>
+							<tr>
+								<td><label for="bgcolor">Background color</label></td>
+								<td><input id="bgcolor" type="color" style="width:100px;" value="#FFFFFF"></td>
+							</tr>
+							<tr>
+								<td><label for="scaling">Scaling</label></td>
+								<td>
+									<select name="scaling" id="scaling">
+										<option value="1" selected>yes (default)</option>
+										<option value="0">no</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><label for="width">Width (apply with scaling yes)</label></td>
+								<td><input id="width" style="width:100px;"></td>
+							</tr>
+							<tr>
+								<td><label for="height">Height (apply with scaling yes)</label></td>
+								<td><input id="height" style="width:100px;"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="swf" style="text-align: center; background-color: #f9f9f9;"></div>
+		<script src="js/testbed_ruffle.js"></script>
+	</body>
+</html>
+

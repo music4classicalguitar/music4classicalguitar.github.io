@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset='UTF-8'>
+		<link rel='stylesheet' href='css/style.css'/>
+		<link rel='stylesheet' href='css/chords/chords.css'/>
+		<script src='js/chords/notenames.js'></script>
+		<script src='js/chords/stringinstruments.js'></script>
+		<script src='js/chords/chordtypes.js'></script>
+		<script src='js/chords/diagrams.js'></script>
+		<title>Chord diagrams</title>
+	</head>
+	<body>
+		<header>
+			<span><a href="index.html"><img src="images/home.svg" alt="home"></a></span> &#160; &#160; &#160; <h1 class='title'>Chord diagrams</h1>
+		</header>
+		<article>
+			<h2>Choose instrument, base note, chordtype</h2>
+			<div>
+				<p>These are chord diagrams generated on base of the notes in a chord within four positions on the fretboard.
+				<br>You have to choose which notes you want to use and which are playable.</p>
+			</div>
+			<div id='diagram_parent' class='diagram_parent'></div>
+		</article>
+		<script>
+			let instrument = '';
+			let query = window.location.search;
+			// Skip the leading ?, which should always be there, 
+			// but be careful anyway
+			if (query.substring(0, 1) == '?') query = query.substring(1);
+			let data = query.split('&'); 
+			let name='', path='', lang='';
+			for (i = 0; (i < data.length); i++) {
+				data[i] = decodeURIComponent(data[i]);
+				let temp = data[i].split('=');
+				if (temp[0]=='instrument') instrument=temp[1];
+			}
+			let c = new Diagrams('diagram_parent', instrument);
+			window.addEventListener('resize', function() {
+				c.update();
+			});
+		</script>
+	</body>
+</html>

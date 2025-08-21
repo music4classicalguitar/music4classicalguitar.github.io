@@ -1,0 +1,13 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Daniel Fortea",
+	"scores": [
+		{ "name": "Daniel Fortea - Op. 7 Romanza - tab", "pages": 2 },
+		{ "name": "Daniel Fortea - Op. 14 Nocturne - Toledo - tab", "pages": 3 },
+		{ "name": "Daniel Fortea - Op. 25 Estudios poéticos - No. 1 Dialogando - tab", "pages": 2 },
+		{ "name": "Daniel Fortea - Op. 25 Estudios poéticos - No. 2 Serenata - tab", "pages": 2 },
+		{ "name": "Daniel Fortea - Op. 25 Estudios poéticos - No. 3 Romance - tab", "pages": 2 },
+		{ "name": "Daniel Fortea - Op. 25 Estudios poéticos - No. 4 Noche de luna - tab", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 13
+}

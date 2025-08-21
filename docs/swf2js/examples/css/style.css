@@ -1,0 +1,67 @@
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	margin: 20px;
+}
+
+p {
+	font-size: 100%;
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	font-size: 180%;
+}
+
+h3 {
+	font-size: 160%;
+}
+
+h4 {
+	font-size: 140%;
+}
+
+h5 {
+	font-size: 120%;
+}
+
+table.center {
+	margin-left: auto; 
+	margin-right: auto;
+	border-style: none ;
+}
+
+table {
+	border: 1px solid black;
+	background-color: #f9f9f9;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells:show;
+}
+
+th {
+	border: 1px solid #AAAAAA;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	background-color: #CCCCCC;
+}       
+	
+td {
+	border: 1px solid #AAAAAA;
+	text-align: left;
+	vertical-align: top;
+}       
+
+pre {
+	font-family: 'Courier New' , monospace ;
+}
+
+hr {
+	color: #CCCCCC;
+}

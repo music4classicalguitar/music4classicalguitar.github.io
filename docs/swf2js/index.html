@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>swf2js</title>
+	</head>
+	<body>
+
+		<h1>swf2js</h1>
+		<p>swf2js.js is a JavaScript FlashPlayer emulator that analyzes SWF files of Adobe Animate (Flash) in real time and converts them to HTML.
+		<br>This is an adapted version of swf2js, based on the free version of swf2js.js (version 0.7.24) from Toshiyuki Ienaga (see <a href="https://github.com/ienaga/swf2js">https://github.com/ienaga/swf2js</a> or <a href="https://swf2js.com/">https://swf2js.com</a>).</p>
+		<p>The current version is 1.2.13.</p>
+		<p>For the source of this version of swf2js and an overview of the adjustments made, see <a href="https://github.com/music4classicalguitar/swf2js">https://github.com/music4classicalguitar/swf2js</a></p>
+		<p>Warning : no support (yet) for <a href="https://en.wikipedia.org/wiki/ActionScript">Actionscript 3</a> which is introduced in Flash Player 9 (initially called 8.5).
+		<br>Newer swf-files (version 9 and up) will probably still work, if you didn't use Actionscript 3</p>
+
+
+		<hr>
+		<h2>Content</h2>
+		<ul>
+		  <li><a href="#Basic_usage">Basic usage</a></li>
+		  <li><a href="#Options">Options</a></li>
+		  <li><a href="#Examples">Examples</a></li>
+		  <li><a href="#Advanced_usage">Advanced usage</a></li>
+		  <li><a href="#Testbed">Testbed</a></li>
+		  <li><a href="#Known_problems">Known problems</a></li>
+		  <li><a href="#Tools">Tools</a></li>
+		  <li><a href="#Information">Information</a></li>
+		</ul>
+		
+		<hr>
+		<h2 id="Basic_usage">Basic usage</h2>
+		<pre>
+&lt;script type="text/javascript" src="swf2js.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    swf2js.load('SET SWF PATH');
+&lt;/script&gt;  
+		</pre>
+
+		<hr>
+		<h2 id="Options">Options</h2>
+		<table>
+			<tr><th>Option</th><th>Description</th></tr>
+			<tr><td>tagId</td><td>Place swf-player in element with tag 'tagId'</td></tr>
+			<tr><td>width</td><td>Set width of swf-player</td></tr>
+			<tr><td>height</td><td>Set height of swf-player</td></tr>
+			<tr><td>callback</td><td>Function to be called when swf-player has loaded the swf-file</td></tr>
+			<tr><td>FlashVars</td><td></td></tr>
+			<tr><td>quality</td><td>"low": 0.25, "medium": 0.8 (default), "high": 1.0</td></tr>
+			<tr><td>audioType</td><td>"webaudio" (default), "webmedia", "html5", "audio"</td></tr>
+			<tr><td>bgcolor</td><td>Set background color</td></tr>
+			<tr><td>autoStart</td><td>true: start animation, false: don't start animation (show a button to start)</td></tr>
+		</table>
+		<p>quality: for mobile devices default 0.6.
+		<br>audioType: default depending on what is supported by your browser.
+		<br>autoStart: depends on whether the swf-file contains sounds and/or video and whether autoplay of audio and/or video is allowed.</p>
+		<p>Audiotype see for details:</p>
+			<table class="no_border">
+				<tr><td>webaudio</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API</a></td></tr>
+				<tr><td>webmedia</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext">developer.mozilla.org/en-US/docs/Web/API/AudioContext</a></td></tr>
+				<tr><td>html5</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement">developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement</a></td></tr>
+				<tr><td>audio</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">developer.mozilla.org/en-US/docs/Web/HTML/Element/audi</a></td></tr>
+			</table>
+
+		<p>Example usage of options.</p>
+		<pre>&lt;div id="swf_1" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
+&lt;div id="swf_2" style="width: 320px; height: 320px;"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="swf2js.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+        swf2js.load('analog20.swf', {tagId: "swf_1", width: 320, height});
+        swf2js.load('mogura.swf', {tagId: "swf_2"});
+&lt;/script&gt;</pre>
+		<p>Example with a callback function:</p>
+		<pre>&lt;script&gt;function informMe(arg) {  alert("informMe : swf-file loaded"); }
+swf2js.load('tiger.swf', {
+  "tagId": "swf_instance", "width": "320", "height": "320",
+  "autoStart" : true, "callback" : informMe, "bgcolor": "black" });
+&lt;/script&gt;</pre>
+
+		<hr>
+		<h2 id="Examples">Examples</h2>
+		<p><a href="examples/examples.html">Examples</a></p>
+		<p><a href="examples/example_options.html">Example with callback function</a></p>
+		<p><a href="animatedmusic/animatedmusic.html">Animated music</a></p>
+		<p><a href="multiple_files.html">Multiple swf-files in one page</a></p>
+
+		<hr>
+		<h2 id="Advanced_usage">Advanced usage</h2>
+		<p>If you want more control, use:</p>
+		<pre>var swf = swf2js.load('your swf-file', {...your options...});</pre>
+		<p>after which you can use:</p>
+		<table>
+			<tr><th>Functions</th><th>Description</th></tr>
+			<tr><td>swf.play()</td><td>Start playing</td></tr>
+			<tr><td>swf.stop()</td><td>Stop playing</td></tr>
+			<tr><td>swf.step()</td><td>Advance one frame</td></tr>
+			<tr><td>swf.showInfo()</td><td>Show info about the current swf-file</td></tr>
+			<tr><td>swf.showDebug()</td><td>Show swfdump-alike info about the current swf-file<br>(only if option debug: true)</td></tr>
+		</table>
+		<p>Example: if you have a button with id='play':</p>
+		<pre>document.getElementById('play').addEventListener('click', function(e) {
+  swf.play();
+});</pre>
+
+		<hr>
+		<h2 id="Testbed">Testbed</h2>
+		<p>To test with your own SWF-files:
+		<br>use <a href="testbed.html">testbed.html</a></p>
+
+		<hr>
+		<h3>Alternative</h3>
+		<p>An alternative for swf2js is <a href="https://ruffle.rs/">Ruffle</a> (see also <a href="https://github.com/ruffle-rs/ruffle">github</a>).
+		<br>Try it here on <a href="testbed_ruffle.html">testbed_ruffle.html</a> for ruffle (nightly.2025.3.21) or on the <a href="https://ruffle.rs/demo/">demo</a> on https://ruffle.rs.</p>
+		<p>You can see the same example <a href="ruffle/animatedmusic.html">Animated music</a> with ruffle instead of swf2js.</p>
+
+		<hr>
+		<h2 id="Known_problems">Known problems</h2>
+		<ul>
+			<li>Only FWS (not compressed) and CWS (zlib compressed) supported.</li>
+	 		<li>ActionScript 1.0 Supported.</li>
+	 		<li>ActionScript 2.0 Largely supported.</li>
+	 		<li>ActionScript 3.0 Not supported.</li>
+	 		<li>Video (mp4 and flv) Not supported.</li>
+	 		<li>Firefox
+				<br>DefineBits, DefineBitsJPEG2, DefineBitsJPEG3, DefineBitsJPEG4
+				<br>gives error message
+				<br>Image corrupt or truncated. URI in this note truncated due to length.</li>
+		</ul>
+
+		<hr>
+		<h2 id="Tools">Tools</h2>
+		<p>Useful tools to analyze SWF-files are:</p>
+		<ul>
+			<li><a href="https://github.com/jindrapetrik/jpexs-decompiler">jpexs-decompiler</a></li>
+			<li><a href="http://swftools.org/">swftools</a> (see also <a href="https://github.com/swftools/swftools">github</a>)</li>
+		</ul>
+
+		<hr>
+		<h2 id="Information">Information</h2>
+		<p>See  <a href="https://open-flash.github.io/mirrors/swf-spec-19.pdf">SWF FILE FORMAT SPECIFICATION VERSION 19</a> on <a href="https://open-flash.github.io/">https://open-flash.github.io/</a>.</p>
+		<p>If you have (or can find) Flash MX 2004 or Flash (Professional) 8, you can stil create sfw-files and use them with swf2js.js</p>
+	<p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</p>
+	</body>
+</html>

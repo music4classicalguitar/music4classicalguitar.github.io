@@ -1,0 +1,145 @@
+/* style for ms_player */
+div.ms_player {
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+div.ms_controls_div {
+	width: 100%;
+	height: 40px;
+	background-color:
+	white;
+}
+div.ms_controls {
+	width: 10%;
+	float: left;
+}
+div.ms_controls_time {
+	width: 18%;
+	height: 40px;
+	line-height: 30px;
+	float: left;
+	display: table-cell;
+	text-align: center;
+}
+button.ms_control_button {
+	display: flex;
+	align-items: center;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.ms_control_button:hover {
+	background-color: #EEEEEE;
+}
+button.ms_metronome {
+	background-color: #0000;
+	border: none;
+	width: 32px;
+	height: 32px;
+	pointer-events: none;
+}
+div.ms_loop {
+	z-index: 100;
+	position: absolute;
+	top: 100px;
+	left: 150px;
+	width: auto;
+	background-color: white;
+	border: 10px solid white;
+	display:none;
+}
+button.ms_loop_button {
+	float: right;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.ms_loop_button:hover {
+	background-color: #EEEEEE;
+}
+button.ms_loop_set {
+	display: block;
+	float: left;
+	border: solid;
+	border-color: #CCCCCC;
+}
+button.ms_loop_set:hover {
+	background-color: #EEEEEE;
+}
+button.ms_tempo {
+	width: 32 px;
+	height: 32px;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+	font-size: 120%;
+}
+button.ms_tempo:hover {
+	background-color: #EEEEEE;
+}
+span.ms_tempo {
+	line-height: 30px;
+	text-align: center;
+}
+button.ms_loop_block {
+	display: block;
+	border: solid;
+	border-color: #CCCCCC;
+	background-color: #0000;
+}
+button.ms_loop_block:hover {
+	background-color: #EEEEEE;
+}
+div.ms_score_div {
+	overflow-y: auto;
+	width: 98%;
+	position: absolute;
+	border: solid;
+	border-width: 5px;
+	border-color: #CCCCCC;
+}
+img.ms_score {
+	width: 100%;
+}
+img.ms_container {
+	z-index: 1;
+	position: relative;
+}
+input.ms_audioPosition {
+	width: 100%;
+}
+div.ms_elid:hover {
+	background-color: red;
+	opacity: 0.1;
+}
+div.ms_loader {
+	position: relative;
+	margin: auto;
+	vertical-align: middle;
+	border: 8px solid #F0F0F0;
+	border-radius: 50%;
+	border-top: 8px solid #808080;
+	width: 32px;
+	height: 32px;
+	-webkit-animation: spin 2s linear infinite;
+	/* Safari */
+	animation: spin 2s linear infinite;
+	}
+/* Safari */
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		}
+	}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

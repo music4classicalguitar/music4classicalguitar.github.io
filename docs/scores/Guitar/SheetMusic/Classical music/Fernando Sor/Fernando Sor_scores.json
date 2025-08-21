@@ -1,0 +1,31 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Fernando Sor",
+	"scores": [
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 1 Andante", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 2 Andantino", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 3 Larghetto", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 4", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 5 Allegretto", "pages": 2 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 6", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 7 Andante", "pages": 2 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 8 Allegretto", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 9 Andante", "pages": 2 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 10", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 11 Allegretto", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 12 Andantino moderato", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 13 Andante", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 14 Andante", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 15 Allegretto", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 16 Moderato", "pages": 2 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 17 Moderato", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 18 Andantino", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 19 Moderato", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 20 Tempo di minuetto", "pages": 2 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 21 Andante", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 22 Allegretto", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 23 Andante", "pages": 1 },
+		{ "name": "Fernando Sor - Op. 35 Vingt quatre exercices très faciles - No. 24 Allegro moderato", "pages": 3 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 31
+}

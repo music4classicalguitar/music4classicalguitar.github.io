@@ -1,0 +1,46 @@
+body {
+	font-family:Arial;
+}
+a:link, a:visited, a:hover, a:active {
+	color:navy;
+	font-weight: bold;
+}
+table {
+	border-collapse: collapse;
+}
+.l {
+	font:"Arial";
+	font-weight:normal;
+	color:navy;
+    text-align: right;
+    vertical-align:top;
+	background-color:#CCFFFF;
+	width: 80pt;
+	heigth:80pt;
+	border:none;
+}
+.r {
+	text-align: center;
+	color:red;
+	font-size : 24pt;
+}
+.r2 {
+	color:red;
+	text-decoration:none;
+	text-underline:none;
+	text-align: center;
+	font-size : 22pt;
+}
+.a, .a:link, .a:visited, .a:hover, .a:active {
+	color:red;
+	-webkit-text-decoration-color:navy;
+	text-decoration-color:navy;
+}
+.e {
+	width:80pt;
+}
+.p {
+	color:purple;
+	border: solid purple 2.25pt;
+	padding:3.0pt 8.5pt 3.0pt 8.5pt;
+}

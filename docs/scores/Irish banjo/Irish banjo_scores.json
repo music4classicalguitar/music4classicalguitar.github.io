@@ -1,0 +1,19 @@
+{
+	"directory": "scores/Irish banjo",
+	"scores": [
+		{ "name": "Tablature/Folk/Ernesto Nazareth/Ernesto Nazareth - Apanhei te, cavaquinho", "pages": 3 },
+		{ "name": "Tablature/Folk/James MacMahon/James MacMahon - The Banshee - reel", "pages": 1 },
+		{ "name": "Tablature/Folk/Joe Mills/Joe Mills - Cooley's - reel", "pages": 1 },
+		{ "name": "Tablature/Folk/Michael Gorman/Michael Gorman - The Mountain Road - reel", "pages": 1 },
+		{ "name": "Tablature/Folk/Tommy Potts/Tommy Potts - The Butterfly - slip jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - Jimmy Ward's - jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - Old Joe's - jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - The Britches Full Of Stitches - polka", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - The Irish Washerwoman - jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - The Kesh - jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - The Leitrim Fancy - jig", "pages": 1 },
+		{ "name": "Tablature/Folk/Traditional/Traditional - The Lilting Banshee - jig", "pages": 1 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 14
+}

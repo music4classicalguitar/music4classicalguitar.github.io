@@ -1,0 +1,204 @@
+body {
+	display: block;
+	margin: 10px;
+	color: #393939;
+}
+
+header {
+	display: block;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells: show;
+	background-color: #EEEEEE;
+	padding: 5px;
+	color: inherit;
+}
+
+.title {
+	display: inline;
+}
+		
+sidebar {
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells: show;
+	float: left;
+	width: 5%;
+	background-color: #FFCC88;
+	padding: 5px;
+	color: inherit;
+}
+
+#sidebar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+}
+
+#sidebar li {
+	padding: 6px;
+	margin-bottom: 10px;
+	background-color: #10A2FF;
+	color: inherit;
+}
+
+#sidebar li:hover {
+	background-color: #009AFB;
+}
+
+article {
+	display:block;
+	position: relative;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells: show;
+	padding: 5px;
+}
+
+section {
+	position: relative;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells:show;
+	width:95%;
+	/*margin from left equal to width of sidebar*/
+	margin-left:25%;
+	padding: 5px;
+	color: inherit;
+}
+
+footer {
+	position: relative;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells: show;
+	padding: 15px;
+	color: inherit;
+	padding: 5px;
+}
+
+h1 { 
+	font-size: 2.0em;     
+}
+h2 { 
+	font-size: 1.5em;     
+}
+h3 { 
+	font-size: 1.3em;     
+}
+h4 { 
+	font-size: 1.0em;     
+}
+h5 { 
+	font-size: 0.8em;     
+}
+h6 { 
+	font-size: 0.7em;     
+}
+
+hr {
+	border-top: 1px solid #AAAAAA;
+}
+
+table {
+	table-layout: fixed;
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	border-collapse: collapse;
+	empty-cells:show;
+	font-size: inherit;
+}
+
+tr {
+	font-size: inherit;
+}
+
+td, th {
+	border-style: solid ;
+	border-width: 1.0px 1.0px 1.0px 1.0px;
+	border-color: #AAAAAA #AAAAAA #AAAAAA #AAAAAA;
+	font-size: inherit;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	background-color: #EEEEEE;
+	font-size: inherit;
+}
+
+td {
+	text-align: left;
+	vertical-align: top;
+}
+
+table.vertical_border {
+	table-layout: fixed;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+table.vertical_border tr {
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+table.vertical_border td:first-child {
+	border-left: none;
+}
+
+table.vertical_border td:last-child {
+	border-right: none;
+}
+
+table.vertical_border td {
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	text-align: center;
+	vertical-align: top;
+}
+
+table.no_border, table.no_border tr, table.no_border th, table.no_border td {
+	table-layout: fixed;
+	border-style: none ;
+	text-align: left;
+}
+
+.vc {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.bf {
+	font-size: 200%;
+}
+
+p {
+	color: inherit;
+	font-size: inherit;
+}
+
+a:link {
+	color: #5EA4D6;
+}

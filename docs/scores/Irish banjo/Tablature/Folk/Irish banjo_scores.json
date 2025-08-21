@@ -1,0 +1,19 @@
+{
+	"directory": "scores/Irish banjo",
+	"scores": [
+		{ "name": "Ernesto Nazareth - Apanhei te, cavaquinho", "pages": 3 },
+		{ "name": "James MacMahon - The Banshee - reel", "pages": 1 },
+		{ "name": "Joe Mills - Cooley's - reel", "pages": 1 },
+		{ "name": "Michael Gorman - The Mountain Road - reel", "pages": 1 },
+		{ "name": "Tommy Potts - The Butterfly - slip jig", "pages": 1 },
+		{ "name": "Traditional - Jimmy Ward's - jig", "pages": 1 },
+		{ "name": "Traditional - Old Joe's - jig", "pages": 1 },
+		{ "name": "Traditional - The Britches Full Of Stitches - polka", "pages": 1 },
+		{ "name": "Traditional - The Irish Washerwoman - jig", "pages": 1 },
+		{ "name": "Traditional - The Kesh - jig", "pages": 1 },
+		{ "name": "Traditional - The Leitrim Fancy - jig", "pages": 1 },
+		{ "name": "Traditional - The Lilting Banshee - jig", "pages": 1 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 14
+}

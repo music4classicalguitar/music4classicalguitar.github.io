@@ -1,0 +1,10 @@
+{
+	"directory": "scores/Guitar/Tablature/Classical music/Anonymous",
+	"scores": [
+		{ "name": "Anonymous - El Testamen d'Amelia - arr. Miguel Llobet - tab", "pages": 1 },
+		{ "name": "Anonymous - Mi favorita (Mazurka) - arr. Daniel Fortea - tab", "pages": 3 },
+		{ "name": "Anonymous - Romance - tab", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 6
+}

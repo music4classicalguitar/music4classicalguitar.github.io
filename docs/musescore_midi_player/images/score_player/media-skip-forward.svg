@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+	<g transform="rotate(180,12,12)" fill="none" fill-rule="evenodd">
+		<path d="m6 6h2v12h-2v-12zm3.5 6 8.5 6v-12l-8.5 6z" fill="#3B3F45"/>
+		<polygon points="0 0 24 0 24 24 0 24"/>
+	</g>
+</svg>

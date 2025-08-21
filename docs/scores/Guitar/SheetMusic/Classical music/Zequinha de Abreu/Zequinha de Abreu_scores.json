@@ -1,0 +1,10 @@
+{
+	"directory": "scores/Guitar/SheetMusic/Classical music/Zequinha de Abreu",
+	"scores": [
+		{ "name": "Zequinha de Abreu - Amando sobre o Mar", "pages": 2 },
+		{ "name": "Zequinha de Abreu - Não me toques - arr. Isaías Sávio", "pages": 2 },
+		{ "name": "Zequinha de Abreu - Tardes em Lindoia - arr. Isidoro Geraldo", "pages": 2 }
+	],
+	"image": { "width": 2976, "height": 4209 },
+	"pages": 6
+}
