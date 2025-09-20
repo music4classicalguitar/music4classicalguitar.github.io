@@ -1,1 +1,58 @@
-../../../../../ScorePlayer.html
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <base href="../../../../..">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/score_player/score_player.css">
+      <title>Score</title>
+   </head>
+   <body>
+      <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "MusicComposition",
+    "name": "Op. 11 Les Favorites. Huit Contredanses - No. 4 ",
+    "composer": [
+        { "@type": "Person", "name": "Dionisio Aguado" }
+    ],
+    "musicalKey": "D major, G major",
+    "genre": "Romantic",
+    "musicCompositionForm": "Solo classical guitar",
+    "isBasedOn": "https://musikverket.se/musikochteaterbiblioteket/ladda-ner-noter/boijes-samling/boijes-samling-a/",
+    "url": "https://music4classicalguitar.github.io/scores/Guitar/SheetMusic/Classical%20music/Dionisio%20Aguado/Dionisio%20Aguado%20-%20Op.%2011%20Les%20Favorites.%20Huit%20Contredanses%20-%20No.%204.html"
+}
+</script>
+      
+      <header><span><a href="index.html"><img src="images/home.svg" alt="home"></a></span> &amp;nbsp; &amp;nbsp; &amp;nbsp; 
+         <h2 class="title">Score player</h2>
+      </header>
+      <p></p>
+      <div id="loop" class="score_loop" style="display: none;">
+         <div><button class="score_loop_button" id="close_loop"><img src="images/score_player/window-close.svg" alt="close"></button></div>
+         <div id="loop_status" style="user-select:none;"><span style="background-color: #2196F3; color: #FFFFFF;"> Click here to move</span><br>Loop: not set</div><br>Fill in or select which measure to set and click on measure to set:
+         						
+         <table class="no_border">
+            <tr>
+               <td><input type="radio" id="loop_start" name="loop" checked><label for="loop_start">Start measure</label></td>
+               <td><input type="number" min="1" max="68" name="loop-start" id="loop-start"></td>
+            </tr>
+            <tr>
+               <td><input type="radio" id="loop_end" name="loop"><label for="loop_end">End measure</label></td>
+               <td><input type="number" min="1" max="68" name="loop-end" id="loop-end"></td>
+            </tr>
+         </table><br><div class="score_loop_set"><button class="score_loop_block" id="set_loop">Set loop</button></div>
+         <div class="score_loop_set"><button class="score_loop_block" id="clear_loop">Clear loop</button></div>
+      </div>
+      <div class="score_player">
+         <div class="score_controls_div">
+            <div class="score_control"><button class="score_control_button" id="skip_backward"><img src="images/score_player/media-skip-backward.svg" alt="skip backward"></button></div>
+            <div class="score_control"><button class="score_control_button" id="toggle_play_pause"><img src="images/score_player/media-playback-play.svg" alt="toggle play/pause"></button></div>
+            <div class="score_control"><button class="score_control_button" id="skip_forward"><img src="images/score_player/media-skip-forward.svg" alt="skip forward"></button></div>
+            <div class="score_control"><button class="score_control_button" id="show_loop"><img src="images/score_player/media-playback-loop.svg" alt="loop"></button></div>
+            <div id="score_time" class="score_control_time">0:00 / ?</div>
+            <div class="score_control"><button title="Metronome" class="score_metronome"><img src="images/score_player/media-playback-metronome.svg" alt="metronome"></button></div>
+            <div class="score_control"><button class="score_control_button" id="tempo_minus"><img src="images/score_player/media-tempo-minus.svg" alt="decrease tempo"></button></div>
+            <div class="score_control"><span class="tempo">100%</span></div>
+            <div class="score_control"><button class="score_control_button" id="tempo_plus"><img src="images/score_player/media-tempo-plus.svg" alt="increase tempo"></button></div><input class="score_audio_position" type="range" min="0" max="1000" value="0"></div><br><div class="score" style="overflow-y: scroll;"></div>
+      </div><script type="module" src="js/score_player/score_player.js"></script></body>
+</html>
