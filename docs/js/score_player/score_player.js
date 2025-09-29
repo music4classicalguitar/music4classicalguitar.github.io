@@ -3,18 +3,14 @@ class ScorePlayer {
 	constructor() {
 		let query;
 		this.score_player = document.getElementsByClassName('score_player')[0];
-		/*
 		if (window.location.search.substring(0, 1) == '?') {
 			query = window.location.search.substring(1);
+			this.score_name = decodeURIComponent(query);
 		} else {
-			this.score_player.innerHTML = 'Error: no score specified.';
-			return;
+			let h = decodeURIComponent(window.location.href);
+			let l = h.length;
+			this.score_name = h.substring(0,l-5);
 		}
-		this.score_name = decodeURIComponent(query);
-		*/
-		let h = decodeURIComponent(window.location.href);
-		let l = h.length;
-		this.score_name = h.substring(0,l-5);
 
 		this.scriptName = 'score_player.js';
 		this.script_path = import.meta.url.match(/(.*)[\/\\]/)[1]||'';
@@ -24,7 +20,6 @@ class ScorePlayer {
 		this.script_grand_parent_path = this.script_parent_path.match(/(.*)[\/\\]/)[1];
 
 		this.image_path = this.script_grand_parent_path+'/images/score_player/';
-		console.log('Score: '+this.score_name+"\n"+this.script_path+"\n"+this.image_path);
 		this.imageScale = 1;
 
 		let _this = this;
